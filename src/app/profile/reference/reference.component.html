@@ -1,0 +1,28 @@
+<div class="reference mrg-btm size--82" *ngIf="reference">
+  <div class="title mrg-btm size--25">{{ 'reference' | translate }}</div>
+
+  <div class="checklist mrg-btm size--50" *ngFor="let content of reference.contents">
+    <div class="checklist__title mrg-btm size--50">{{ content.title }}</div>
+    <div class="d-flex">
+      <div>
+        <div class="custom-icon checklist-icon mrg-rgt size--33" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+      </div>
+      <div>
+        <div class="checklist__item" [innerHTML]="content.body"></div>
+      </div>
+    </div>
+  </div>
+
+<!--  <div class="checklist">-->
+<!--    <div class="checklist__title mrg-btm size&#45;&#45;50">Правила регистрации</div>-->
+<!--    <div class="d-flex">-->
+<!--      <div class="custom-icon profile-big-icon mrg-rgt size&#45;&#45;33"></div>-->
+<!--      <div>-->
+<!--        <div class="checklist__item">Правило для обучающихся 1</div>-->
+<!--        <div class="checklist__item">Правило для обучающихся 2</div>-->
+<!--        <div class="checklist__item">Правило для обучающихся 3</div>-->
+<!--        <div class="checklist__item">Правило для обучающихся 4</div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+</div>

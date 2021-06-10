@@ -1,0 +1,9 @@
+<mat-dialog-actions>
+  <div class="are-you-sure d-flex flex-column align-items-center justify-content-center text-center">
+    <div class="mrg-btm size--50">{{ 'are_you_sure_alert.question' | translate }}</div>
+    <div class="mrg-btm size--34 w-100 d-flex justify-content-around">
+      <app-button mat-dialog-close [mat-dialog-close]="true" height="56px" width="120px">{{ 'are_you_sure_alert.logOut' | translate }}</app-button>
+      <app-button mat-dialog-close [mat-dialog-close]="false" height="56px" width="120px" buttonType="small-gray">{{ 'are_you_sure_alert.no' | translate }}</app-button>
+    </div>
+  </div>
+</mat-dialog-actions>

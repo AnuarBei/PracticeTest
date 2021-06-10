@@ -1,0 +1,21 @@
+<div
+  [ngClass]="{ 'plan': !appService.isOnImpairedMode, 'plan_impaired': appService.isOnImpairedMode }"
+>
+  <div class="title mrg-btm size--25">{{ 'plan.plan' | translate }}</div>
+  <div class="scroll-container pdg-rgt size--5">
+    <div class="course d-flex mrg-btm size--25 pdg-btm size--15" *ngFor="let course of courses">
+      <div class="course__image mrg-rgt size--28" [ngStyle]="{ 'background-image': 'url(' + course.image + ')' }"></div>
+      <div class="w-75">
+        <div class="course__title mrg-btm size--10">{{ course.name }}</div>
+        <div class="course__description mrg-btm size--25">
+          {{ course.description }}
+        </div>
+        <div>{{ 'plan.nearestCourse' | translate }}</div>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="course__date-interval" *ngIf="course.durations[0]">{{ course.durations[0].start }} - {{ course.durations[0].end }}</div>
+          <app-button width="197px" height="56px" (click)="navigate('/training/' + course.id)">{{ 'plan.moreDetails' | translate }}</app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

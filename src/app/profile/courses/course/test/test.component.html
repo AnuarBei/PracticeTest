@@ -1,0 +1,44 @@
+<div [ngClass]="{ 'test': !appService.isOnImpairedMode, 'test_impaired': appService.isOnImpairedMode }" *ngIf="test">
+    <div class="title mrg-btm size--10">{{ 'test.testing' | translate }}</div>
+    <div class="question-tabs mrg-btm size--50">
+        <div *ngFor="let question of test.questions; let i = index;" class="question-tabs__item h-100"
+            [ngClass]="{ 
+                'question-tabs__item_active': activeQuestion.index === i,
+                'question-tabs__item_skipped': !answers[i]
+            }"
+            (click)="selectActiveQuestion(i, question)">
+            {{ 'test.question' | translate }} {{ i + 1 }}
+        </div>
+    </div>
+    <div class="question">
+        <div class="question__attempt text-center mrg-btm size--18">{{ 'test.testingAttempt' | translate }}
+            {{ test.attempts + 1 }}/{{ test.max }}</div>
+        <div class="d-flex justify-content-between mrg-btm size--20">
+            <div class="question__number">{{ 'test.question' | translate }}
+                {{ activeQuestion.index + 1 }}/{{ test.questions.length }}</div>
+            <div class="d-flex align-items-center">
+                <div class="custom-icon clock-icon mrg-rgt size--7"
+                    [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+                <div class="test__until-end mrg-rgt size--10">{{ 'test.untilEnd' | translate }} -</div>
+                <div class="test__timer">{{ timer }}</div>
+            </div>
+        </div>
+        <div class="question__itself mrg-btm size--23">{{ activeQuestion.value }}</div>
+        <div class="mrg-btm size--50">
+            <app-radio-button [options]="activeQuestion.options" [styles]="styles"
+                (newValue)="answers[activeQuestion.index] = $event"
+                [answer]="answers[activeQuestion.index] || { option: null }"></app-radio-button>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+            <div class="mrg-btm size--25" (click)="next()">
+                <app-button>
+                    {{ test.questions.length === activeQuestion.index + 1 ? ('test.finish' | translate) : ('test.next' | translate) }}
+                </app-button>
+            </div>
+            <div class="link" (click)="finish()" *ngIf="test.questions.length > activeQuestion.index + 1">
+                {{ 'test.finishTest' | translate }}</div>
+        </div>
+    </div>
+
+    <app-dialog *ngIf="alert" [alert]="alert" (closeDialog)="getResult($event)"></app-dialog>
+</div>

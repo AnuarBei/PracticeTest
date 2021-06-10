@@ -1,0 +1,22 @@
+<div class="row mrg-btm size--50">
+  <div class="col-lg-6">
+    <div class="mrg-btm size--30">
+      <app-input (newValue)="education.name_org = $event" [value]="education.name_org" placeholder="{{ 'step_three.enterUniversity' | translate }}" label="{{ 'step_three.university' | translate }}" [required]="true"></app-input>
+    </div>
+    <div class="mrg-btm size--30">
+      <app-select (newValue)="education.type = $event" [value]="education.type" label="{{ 'step_three.educationType' | translate }}" [options]="educationTypes" [required]="true"></app-select>
+      <!-- <app-input (newValue)="education.type = $event" [value]="education.type" label="{{ 'step_three.educationType' | translate }}" [required]="true"></app-input> -->
+    </div>
+    <div class="mrg-btm size--30">
+      <app-select (newValue)="education.spec = $event" [value]="education.spec" label="{{ 'step_three.specialty' | translate }}" [options]="specialities" [required]="true"></app-select>
+    </div>
+    <div *ngIf="user.occupation !== 3">
+      <app-image-uploader
+        [required]="true"
+        (newValue)="education.doc = $event"
+        [value]="education.doc"
+        label="{{ 'step_three.uploadDiploma' | translate }}"
+        hint="{{ 'step_three.uploadHint' | translate }}"></app-image-uploader>
+    </div>
+  </div>
+</div>

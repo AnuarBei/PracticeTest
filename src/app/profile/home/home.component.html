@@ -1,0 +1,36 @@
+<div
+  [ngClass]="{ 'home': !appService.isOnImpairedMode, 'home_impaired': appService.isOnImpairedMode }"
+>
+  <div class="title mrg-btm size--30">{{ 'home.home' | translate }}</div>
+  <div class="subtitle mrg-btm size--45" *ngIf="mainPageInfo" [innerHTML]="mainPageInfo.body"></div>
+  <div class="d-flex align-items-center mrg-btm size--45">
+    <div
+      class="custom-icon mrg-rgt size--20"
+      [ngClass]="{ 'marked-bell-icon': notifications.length, 'bell-icon': !notifications.length, 'custom-icon_impaired': appService.isOnImpairedMode }"
+    ></div>
+    <div class="number-of-notifications">{{ notifications.length }} {{ 'home.newNotifications' | translate }}</div>
+  </div>
+  <div class="notification mrg-btm size--10" *ngFor="let notification of notifications; let i = index">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <div class="notification__status notification__status_unread mrg-rgt size--10"></div>
+        <div>
+          <div class="notification__title">{{ notification.title }}</div>
+          <div class="notification__date">
+            {{ appService.moment(notification.date_created).format('D MMMM YYYY') }}
+<!--            в-->
+            {{ appService.moment(notification.date_created).format('HH:mm') }}
+          </div>
+        </div>
+      </div>
+      <div class="notification__toggle d-flex align-items-center" (click)="setActiveNotificationId(notification.id)">
+        <div class="mrg-rgt size--10">{{ 'home.expand' | translate }}</div>
+        <div
+          class="custom-icon arrow-to-down-icon"
+          [ngClass]="{ 'custom-icon_reversed': activeNotificationId === notification.id, 'custom-icon_impaired': appService.isOnImpairedMode }"
+        ></div>
+      </div>
+    </div>
+    <div *ngIf="activeNotificationId === notification.id" class="mrg-top mrg-btm size--30">{{ notification.message }}</div>
+  </div>
+</div>

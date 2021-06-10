@@ -1,0 +1,15 @@
+<div
+  [ngClass]="{ 'input-block': !appService.isOnImpairedMode, 'input-block_impaired': appService.isOnImpairedMode }"
+>
+  <div class="label d-flex mrg-btm size--6">
+    {{ label }}
+    <div *ngIf="required" class="label__required-mark"></div>
+  </div>
+  <input
+    (input)="emitNewValue($event)"
+    [value]="value"
+    class="input-block__input"
+    [placeholder]="placeholder"
+    [type]="type"
+  />
+</div>

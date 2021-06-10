@@ -1,0 +1,12 @@
+<mat-dialog-actions>
+  <div
+    [ngClass]="{ 'test-passed': !appService.isOnImpairedMode, 'test-passed_impaired': appService.isOnImpairedMode }"
+    class="d-flex flex-column align-items-center justify-content-center text-center"
+  >
+    <div class="mrg-btm size--50">{{ 'test_passed.message' | translate }}</div>
+    <div class="mrg-btm size--34">
+      <app-button mat-dialog-close mat-dialog-close="done">{{ 'test_passed.done' | translate }}</app-button>
+    </div>
+    <div class="link" mat-dialog-close mat-dialog-close="view-results">{{ 'test_passed.viewResults' | translate }}</div>
+  </div>
+</mat-dialog-actions>

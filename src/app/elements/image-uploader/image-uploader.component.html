@@ -1,0 +1,31 @@
+<div
+  [ngClass]="{ 'image-uploader': !appService.isOnImpairedMode, 'image-uploader_impaired': appService.isOnImpairedMode }"
+>
+  <div class="label d-flex mrg-btm size--20">
+    {{ label }}
+    <div *ngIf="required" class="label__required-mark"></div>
+  </div>
+
+  <div class="mrg-btm size--10">
+    <input
+      type="file"
+      id="file"
+      class="input-file"
+      multiple
+      (change)="handleFileInput($event)" />
+    <label
+      [for]="image ? null : 'file'"
+      class="file"
+      [ngClass]="{'file_uploaded': file}"
+      [ngStyle]="{'background-image': 'url(' + image + ')'}">
+      <div class="custom-icon image-uploader-icon" *ngIf="!file" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+      <div
+        [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"
+        class="custom-icon remove-icon"
+        *ngIf="file"
+        (click)="resetFileInput()"></div>
+    </label>
+  </div>
+
+  <div class="hint">{{ hint }}</div>
+</div>

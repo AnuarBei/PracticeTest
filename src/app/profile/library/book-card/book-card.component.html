@@ -1,0 +1,19 @@
+<div
+  class="mrg-btm size--16"
+  [ngClass]="{ 'book-card': !appService.isOnImpairedMode, 'book-card_impaired': appService.isOnImpairedMode }"
+  *ngIf="book"
+>
+  <div class="book-card__info">
+    <div class="book-card__title mrg-btm size--8">{{ book.name }}</div>
+    <div class="book-card__description mrg-btm size--10">{{ book.about }}</div>
+    <div class="book-card__date">
+      {{ appService.moment(book.created).format('DD.MM.YYYY') }}
+    </div>
+  </div>
+  <a [href]="book.file" target="_blank" class="book-card__download d-flex justify-content-center align-items-center">
+    <div class="d-flex align-items-center">
+      <div class="custom-icon download-icon mrg-rgt size--13" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+      <div>{{ 'book_card.download' | translate }}</div>
+    </div>
+  </a>
+</div>

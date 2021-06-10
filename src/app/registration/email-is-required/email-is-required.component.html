@@ -1,0 +1,11 @@
+<mat-dialog-actions>
+  <div
+    [ngClass]="{ 'email-is-required': !appService.isOnImpairedMode, 'email-is-required_impaired': appService.isOnImpairedMode }"
+    class="d-flex flex-column align-items-center justify-content-center text-center"
+  >
+    <div class="mrg-btm size--50">{{ 'email_is_required.message' | translate }}</div>
+    <div class="mrg-btm size--34">
+      <app-button mat-dialog-close mat-dialog-close="ok" height="56px" width="120px">{{ 'email_is_required.ok' | translate }}</app-button>
+    </div>
+  </div>
+</mat-dialog-actions>

@@ -1,0 +1,23 @@
+<div
+  class="mrg-btm size--30"
+  [ngClass]="{ 'certificate-card': !appService.isOnImpairedMode, 'certificate-card_impaired': appService.isOnImpairedMode }"
+>
+  <div class="certificate-card__image">
+<!--    <app-lightbox-->
+<!--      image="https://images.genius.com/91fdd9beb6b566fa16c4dc78fe62c373.444x449x1.jpg"-->
+<!--      thumb="https://images.genius.com/91fdd9beb6b566fa16c4dc78fe62c373.444x449x1.jpg"-->
+<!--    ></app-lightbox>-->
+  </div>
+  <div class="certificate-card__info">
+    <div class="certificate-card__date mrg-btm size--10">
+      {{ appService.moment(certificate.date_created).format('DD.MM.YYYY') }}
+    </div>
+    <div class="certificate-card__title mrg-btm size--8">{{ certificate.course.name }}</div>
+  </div>
+  <a [href]="certificate.certificate" target="_blank" class="certificate-card__download d-flex justify-content-center align-items-center">
+    <div class="d-flex align-items-center">
+      <div class="custom-icon download-icon mrg-rgt size--13" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+      <div>{{ 'certificates.certificates' | translate }}</div>
+    </div>
+  </a>
+</div>

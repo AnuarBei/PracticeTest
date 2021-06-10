@@ -1,0 +1,106 @@
+<div
+  [ngClass]="{ 'header': !appService.isOnImpairedMode, 'header_impaired': appService.isOnImpairedMode }"
+>
+  <div class="container">
+    <div class="row">
+      <div class="header__logo col-lg-4">
+<!--        <div class="custom-icon logo-icon__black"></div>-->
+        <div routerLink="/">{{ 'name' | translate }}</div>
+      </div>
+      <div class="header__navigation col-lg-8">
+        <div class="d-flex justify-content-between">
+          <div class="languages d-flex">
+            <div
+              class="languages__item mrg-rgt size--20"
+              (click)="switchLanguage('kk')"
+              [ngClass]="{ 'languages__item_active': appService.language === 'kk' }"
+            >Қаз</div>
+            <div
+              class="languages__item"
+              (click)="switchLanguage('ru')"
+              [ngClass]="{ 'languages__item_active': appService.language === 'ru' }"
+            >Рус</div>
+          </div>
+          <!-- <div class="d-flex" *ngIf="callCenter && callCenter.display">
+            <div class="custom-icon phone-icon mrg-rgt size--10" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+            <div>{{ callCenter.phone }}</div>
+          </div> -->
+          <div class="d-flex header__switch-mode" (click)="switchMode()">
+            <div class="custom-icon eye-icon mrg-rgt size--10" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+            <div *ngIf="translate.currentLang === 'ru'">{{ appService.isOnImpairedMode ? 'Выключить' : 'Включить' }} режим для слабовидящих</div>
+            <div *ngIf="translate.currentLang === 'kk'">Көру қабілеті нашарларға режимін {{ appService.isOnImpairedMode ? 'өшіру' : 'қосу' }}</div>
+          </div>
+          <div class="d-flex">
+            <div class="custom-icon profile-icon mrg-rgt size--10" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+            <div *ngIf="!isLoggedIn">
+              <span class="header__navigation-link" (click)="navigate('/authorization')">{{ 'header.logIn' | translate }}</span>
+              /
+              <span class="header__navigation-link" (click)="navigate('/registration')">{{ 'header.registration' | translate }}</span>
+            </div>
+            <div
+              (click)="navigate('/profile')"
+              *ngIf="isLoggedIn"
+              class="header__navigation-link d-flex flex-column align-items-end"
+              [ngClass]="{ 'header__navigation-link_bold': isLoggedIn }"
+              (mouseenter)="profileLinkHover = true"
+              (mouseleave)="profileLinkHover = false"
+            >
+              Личный кабинет
+              <div *ngIf="profileLinkHover" (click)="showDialog = true" class="logout-dropdown">{{ 'header.logOut' | translate }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="menu d-flex justify-content-between" *ngIf="!isSearchActivated">
+          <a routerLink="/about" routerLinkActive="menu__link_active" class="menu__link" [routerLinkActiveOptions]="{ exact: true }">{{ 'header.about' | translate }}</a>
+          <div
+            class="menu__link"
+            (mouseenter)="linkHover = true"
+            (mouseleave)="linkHover = false"
+          >
+            <div
+              class="menu__link mrg-btm size--12"
+              [class]="{ 'menu__link_active': currentRoute === '/profile/information' || currentRoute === '/profile/plan' }"
+            >Обучение</div>
+            <div
+              *ngIf="linkHover"
+              class="link-dropdown"
+            >
+              <div class="link-dropdown__item" (click)="navigate('/profile/information')">{{ 'header.information' | translate }}</div>
+              <div class="link-dropdown__item" (click)="navigate('/profile/plan')">{{ 'header.plan' | translate }}</div>
+            </div>
+          </div>
+          <a routerLink="/news" routerLinkActive="menu__link_active" class="menu__link">{{ 'header.news' | translate }}</a>
+          <a routerLink="/contacts" routerLinkActive="menu__link_active" class="menu__link">{{ 'header.contacts' | translate }}</a>
+          <div
+            class="menu__link"
+            (click)="isSearchActivated = true"
+            [class]="{ 'menu__link_active': currentRoute && currentRoute.includes('/search') }"
+          >{{ 'header.search' | translate }}</div>
+        </div>
+        <div
+          class="search"
+          *ngIf="isSearchActivated"
+          (mouseenter)="isOnSearch = true"
+          (mouseleave)="isOnSearch = false"
+        >
+          <div class="d-flex mrg-btm size--6">
+            <input
+              (keyup.enter)="goToSearchPage()"
+              (input)="setQuery($event)"
+              (blur)="closeSearch()"
+              type="text"
+              class="search__input flex-fill"
+              appAutofocus
+            >
+            <div class="custom-icon search-icon mrg-rgt size--20 mrg-top size--11" (click)="goToSearchPage()" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+          </div>
+          <div class="search__results" *ngIf="results.length">
+            <div class="search__results-item" *ngFor="let result of results" (click)="goToResult(result)">{{ result.name || result.title }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-dialog *ngIf="showDialog" [alert]="'are-you-sure'" (closeDialog)="getResult($event)"></app-dialog>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div
+        *ngIf="aboutInfo"
+        [ngClass]="{ 'about': !appService.isOnImpairedMode, 'about_impaired': appService.isOnImpairedMode }"
+      >
+        <div class="about__title mrg-btm size--20">
+          {{ aboutInfo.title }}
+        </div>
+<!--        <div class="about__subtitle mrg-btm size&#45;&#45;30">-->
+<!--          {{ aboutInfo.subtitle }}-->
+<!--        </div>-->
+        <div class="about__body text-justify mrg-btm size--30">
+          <div
+            class="about__image mrg-btm size--20 mrg-rgt size--20"
+            [ngStyle]="{ 'background-image': 'url(https://srh.org.kz/' + aboutInfo.image + ')' }"
+          ></div>
+          <div>{{ aboutInfo.body }}</div>
+        </div>
+<!--        <div class="about__source-info">-->
+<!--          Источник: <span class="about__source">{{ newsItem.source }}</span>-->
+<!--        </div>-->
+      </div>
+    </div>
+  </div>
+</div>

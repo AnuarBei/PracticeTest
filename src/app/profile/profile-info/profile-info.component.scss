@@ -1,0 +1,188 @@
+.profile-info {
+  .profile-info__full-name {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 150%;
+    color: #333333;
+  }
+  .profile-info__age {
+    font-size: 20px;
+    line-height: 150%;
+    color: #333333;
+  }
+  .profile-info__phone {
+    font-size: 17px;
+    line-height: 20px;
+    color: #333333;
+  }
+  .profile-info__edit {
+    cursor: pointer;
+    .profile-info__edit-text {
+      font-size: 17px;
+      line-height: 20px;
+      text-decoration-line: underline;
+      color: #717784;
+    }
+  }
+  .profile-info__status {
+    font-size: 20px;
+    line-height: 150%;
+    color: #333333;
+    .profile-info__status-value {
+      font-weight: 500;
+      color: #333333;
+      &.profile-info__status-value_blue {
+        color: #00409E;
+      }
+    }
+  }
+
+  .statistics {
+    height: 140px;
+    width: 572px;
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #717784;
+
+    .statistics__title, .statistics__value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 70px;
+      width: 190px;
+    }
+    .statistics__title {
+      background: #717784;
+      border-right: 1px solid #c6c8ce;
+      font-size: 17px;
+      line-height: 150%;
+      color: #FFFFFF;
+    }
+
+    .statistics__value {
+      background: #ffffff;
+      border-right: 1px solid #717784;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 150%;
+      color: #00409E;
+    }
+
+    .statistics__column:last-child {
+      .statistics__title {
+        border-right: none;
+      }
+    }
+
+    .statistics__column:last-child {
+      .statistics__value {
+        border-right: none;
+      }
+    }
+  }
+
+  .profile-info__rejection {
+    font-size: 20px;
+    line-height: 23px;
+    color: #333333;
+    .profile-info__rejection-reason {
+      color: #EB5757;
+    }
+  }
+}
+
+
+.profile-info_impaired {
+  .profile-info__full-name {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 150%;
+    color: #000000;
+  }
+  .profile-info__age {
+    font-size: 20px;
+    line-height: 150%;
+    color: #000000;
+  }
+  .profile-info__phone {
+    font-size: 17px;
+    line-height: 20px;
+    color: #000000;
+  }
+  .profile-info__edit {
+    cursor: pointer;
+    .profile-info__edit-text {
+      font-size: 17px;
+      line-height: 20px;
+      text-decoration-line: underline;
+      color: #000000;
+    }
+  }
+  .profile-info__status {
+    font-size: 20px;
+    line-height: 150%;
+    color: #000000;
+    .profile-info__status-value {
+      font-weight: 500;
+      color: #000000;
+      &.profile-info__status-value_blue {
+        color: #000000;
+      }
+    }
+  }
+
+  .statistics {
+    height: 140px;
+    width: 572px;
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #000000;
+
+    .statistics__title, .statistics__value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 70px;
+      width: 190px;
+    }
+    .statistics__title {
+      background: #797979;
+      border-right: 1px solid #000000;
+      font-size: 17px;
+      line-height: 150%;
+      color: #FFFFFF;
+    }
+
+    .statistics__value {
+      background: #ffffff;
+      border-right: 1px solid #000000;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 150%;
+      color: #000000;
+    }
+
+    .statistics__column:last-child {
+      .statistics__title {
+        border-right: none;
+      }
+    }
+
+    .statistics__column:last-child {
+      .statistics__value {
+        border-right: none;
+      }
+    }
+  }
+
+  .profile-info__rejection {
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    .profile-info__rejection-reason {
+      color: #000000;
+    }
+  }
+}

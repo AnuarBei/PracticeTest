@@ -1,0 +1,38 @@
+<div
+  [ngClass]="{ 'feedback': !appService.isOnImpairedMode, 'feedback_impaired': appService.isOnImpairedMode }"
+>
+  <div class="title mrg-btm size--30">{{ 'feedback.feedback' | translate }}</div>
+  <div class="chat">
+    <div class="messages scroll-container" id="messages">
+      <div
+        class="messages__item d-flex flex-column mrg-btm size--30"
+        *ngFor="let message of messages;let index = index"
+        [ngClass]="{ 'align-items-end': !message.answer }"
+      >
+        <div class="messages__content">
+          <div class="messages__sender mrg-btm size--6">
+            {{ message.answer ? ('feedback.supportService' | translate) : ('feedback.you' | translate) }}
+          </div>
+          <div class="messages__date mrg-btm size--6">
+            {{ appService.moment(message.date_created).format('D MMMM YYYY') }}
+<!--            в-->
+            {{ appService.moment(message.date_created).format('HH:mm') }}
+          </div>
+          <div class="messages__message-text">{{ message.body }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="chat__input">
+      <div class="mrg-btm size--6">{{ 'feedback.writeMessage' | translate }}</div>
+      <textarea
+        [(ngModel)]="message.body"
+        placeholder="{{ 'feedback.typeMessage' | translate }}"
+        class="mrg-btm size--20"
+        (keyup.enter)="sendMessage()"
+      ></textarea>
+      <div class="d-flex justify-content-end">
+        <app-button width="197px" (click)="sendMessage()">{{ 'feedback.send' | translate }}</app-button>
+      </div>
+    </div>
+  </div>
+</div>

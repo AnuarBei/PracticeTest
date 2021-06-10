@@ -1,0 +1,7 @@
+<mat-radio-group (change)="emitNewValue($event)">
+  <div *ngFor="let option of options; let i = index;" [ngStyle]="styles">
+    <mat-radio-button [value]="option.value" color="primary" [checked]="option.value.option === answer.option" [disabled]="disabled">
+        <span class="option">{{ option.option }}</span>
+    </mat-radio-button>
+  </div>
+</mat-radio-group>

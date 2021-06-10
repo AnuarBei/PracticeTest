@@ -1,0 +1,313 @@
+{
+  "name": "Образовательная онлайн платформа по современным методам контрацепции",
+  "copyright": "2021 Образовательная онлайн платформа по современным методам контрацепции. Все права защищены",
+  "authorization": {
+    "welcome": "Добро пожаловать!",
+    "hint": "Выполните вход, чтобы просматривать образовательный контент",
+    "login": "Логин",
+    "email": "Email",
+    "enterLogin": "Введите логин",
+    "enterEmail": "Введите email",
+    "password": "Пароль",
+    "enterPassword": "Введите пароль",
+    "incorrectCredentials": "Неверные данные",
+    "rememberPassword": "Запомнить пароль",
+    "forgotPassword": "Не помню пароль",
+    "logIn": "Войти",
+    "register": "Зарегистрироваться",
+    "doNotHaveAccount": "Нет аккаунта?"
+  },
+  "contacts": {
+    "phone": "Телефон:",
+    "address": "Адрес:",
+    "schedule": "График работы:"
+  },
+  "custom_select": {
+    "month": "Месяц"
+  },
+  "select": {
+    "not_chosen": "Не выбрано"
+  },
+  "header": {
+    "logIn": "Войти",
+    "registration": "Регистрация",
+    "logOut": "Выход",
+    "about": "О платформе",
+    "information": "Информация для обучающихся",
+    "plan": "План-график обучения",
+    "news": "Новости",
+    "contacts": "Контакты",
+    "search": "Поиск"
+  },
+  "are_you_sure_alert": {
+    "question": "Вы действительно хотите выйти?",
+    "logOut": "Выйти",
+    "no": "Нет"
+  },
+  "main": {
+    "about": "О платформе",
+    "moreDetails": "Подробнее",
+    "trustUs": "Нам доверяют",
+    "usersWhoListenedCourses": "пользователей, которые прослушали наши курсы",
+    "usersWhoGotCertificate": "пользователи, которые уже получили сертификат"
+  },
+  "news": {
+    "news": "Новости",
+    "moreDetails": "Подробнее"
+  },
+  "news_article": {
+    "source": "Источник"
+  },
+  "page_not_found": {
+    "notFound": "К сожалению, страница не найдена",
+    "return": "Вернуться назад"
+  },
+  "page_title": {
+    "authorization": "Вход в личный кабинет",
+    "passwordRecovery": "Восстановление пароля",
+    "registration": "Регистрация",
+    "search": "Поиск",
+    "contacts": "Контакты",
+    "about": "О платформе",
+    "news": "Новости",
+    "profile": "Личный кабинет",
+    "training": "Обучение",
+    "myCourses": "Мои курсы",
+    "testing": "Тестирование",
+    "results": "Результаты",
+    "course": "Курс"
+  },
+  "password_recovery": {
+    "passwordRecovery": "Восстановление пароля",
+    "hint": "Введите адрес электронной почты, указанный при регистрации",
+    "login": "Логин",
+    "enterLogin": "Введите логин",
+    "restorePassword": "Восстановить пароль",
+    "cancel": "Отмена",
+    "response": "На указанный адрес электронной почты направлено письмо с новым паролем"
+  },
+  "certificates": {
+    "certificates": "Сертификаты",
+    "download": "Скачать"
+  },
+  "must_be_answered": {
+    "message": "Для завершения тестирования необходимо ответить на все вопросы",
+    "continue": "Продолжить"
+  },
+  "test_passed": {
+    "message": "Тест успешно пройден!",
+    "done": "Готово",
+    "viewResults": "Посмотреть результаты"
+  },
+  "time_is_up": {
+    "message": "Время истекло",
+    "subMessage": "Вы не прошли тестирование. Прохождение образовательного курса невозможно. Вы можете повторно записаться на прохождение образовательного курса выбрав доступное расписание в плане-графике",
+    "selectCourseDate": "Выбрать дату курса",
+    "close": "Закрыть"
+  },
+  "test": {
+    "testing": "Тестирование",
+    "question": "Вопрос",
+    "testingAttempt": "Попытка прохождения тестирования",
+    "untilEnd": "до конца теста",
+    "finish": "Завершить",
+    "next": "Далее",
+    "finishTest": "Завершить тест"
+  },
+  "test_results": {
+    "testing": "Тестирование",
+    "question": "Вопрос",
+    "close": "Закрыть",
+    "congratulations": "Поздравляем!",
+    "youHavePassedTest": "Вы успешно прошли тестирование.",
+    "done": "Готово",
+    "totalQuestions": "Всего вопросов",
+    "correctAnswers": "Верных ответов",
+    "requiredNumberOfCorrectAnswers": "Необходимое количество верных ответов",
+    "viewTestResults": "Посмотреть результаты тестов",
+    "unfortunately": "К сожалению,",
+    "youHaveFailedTest": "Вы неуспешно прошли тестирование.",
+    "tryAgain": "Попробовать снова",
+    "backToCourse": "Вернуться к курсу",
+    "timeIsUp": "Время истекло",
+    "timeIsUpFull": "Время прохождения итогового тестирования истекло.",
+    "courseNotPassed": "Курс не пройден",
+    "youHaveNoMoreAttempts": "У Вас не осталось попыток повторного прохождения теста."
+  },
+  "course": {
+    "preliminaryTest": "Предварительный тест",
+    "finalTest": "Итоговый тест",
+    "module": "Модуль",
+    "numberOfChapters": "Количество разделов",
+    "moduloTest": "Тест по модулю",
+    "completed": "Завершен",
+    "viewResult": "Посмотреть результат",
+    "courseHasBeenPassed": "Образовательный курс успешно пройден!",
+    "goToCertificates": "Перейти к сертификатам",
+    "testResults": "Результаты тестов",
+    "syllabus": "Силлабус",
+    "usefulLinks": "Полезные ссылки",
+    "youHaveFailedPreliminaryTest": "Вы не прошли промежуточное тестирование. Прохождение образовательного курса невозможно. Вы можете повторно записаться на прохождение образовательного курса выбрав доступное расписание в план-графике",
+    "plan": "План-график",
+    "aboutCourse": "Об этом курсе"
+  },
+  "course_card": {
+    "duration": "продолжительность",
+    "courseHasBeenPassed": "Курс успешно пройден",
+    "youHaveToPassPreliminaryTest": "Вам, необходимо пройти промежуточное тестирование",
+    "takePreliminaryTest": "Пройти промежуточное тестирование",
+    "youHaveBeenPassedPreliminaryTest": "Вы прошли промежуточное тестирование.Обучение по выбранному образовательному курсу начнется",
+    "continue": "Продолжить обучение",
+    "moreDetails": "Подробнее"
+  },
+  "pre-test-required": {
+    "message": "Для прохождения данного курса необходимо пройти промежуточное тестирование",
+    "startTest": "Начать тест",
+    "passLater": "Пройти позже"
+  },
+  "feedback": {
+    "feedback": "Обратная связь",
+    "supportService": "Служба поддержки",
+    "you": "Вы",
+    "writeMessage": "Написать сообщение",
+    "typeMessage": "Введите сообщение",
+    "send": "Отправить"
+  },
+  "home": {
+    "home": "Главная",
+    "newNotifications": "новых уведомлений",
+    "expand": "Развернуть"
+  },
+  "how_to_start": {
+    "howToStart": "Как начать?",
+    "preliminaryTest": "Промежуточное тестирование",
+    "registration": "Регистрация",
+    "passingCourse": "Промежуточное тестирование",
+    "finalTesting": "Итоговое тестирование",
+    "obtainingCertificate": "Получение сертификата"
+  },
+  "information": "Информация для обучающихся",
+  "library": "Библиотека",
+  "book_card": {
+    "download": "Скачать"
+  },
+  "menu": {
+    "home": "Главная",
+    "profileInfo": "Анкета",
+    "information": "Информация для обучающихся",
+    "library": "Библиотека",
+    "plan": "План-график обучения",
+    "courses": "Мои курсы",
+    "certificates": "Сертификаты",
+    "reference": "Справка",
+    "feedback": "Обратная связь"
+  },
+  "plan": {
+    "plan": "План-график обучения",
+    "nearestCourse": "Ближайший курс",
+    "moreDetails": "Подробнее"
+  },
+  "profile_info": {
+    "age": "лет",
+    "status": "Статус",
+    "edit": "Редактировать",
+    "coursesCompleted": "Пройдено курсов",
+    "coursesInProgress": "Курсы в процессе",
+    "certificates": "Сертификатов",
+    "userDataEditingRequired": "Необходимо редактирование данных пользователя",
+    "goTo": "Перейти",
+    "pendingModeration": "Ожидает модерации",
+    "approved": "Одобрен",
+    "rejected": "Отклонен"
+  },
+  "saved": {
+    "message": "Изменения сохранены",
+    "ok": "Ок"
+  },
+  "editing": {
+    "editing": "Редактирование",
+    "enterPhoneNumber": "Введите номер сотового телефона",
+    "phoneNumber": "Номер сотового телефона",
+    "save": "Сохранить"
+  },
+  "reference": "Справка",
+  "registration": {
+    "welcome": "Добро пожаловать!",
+    "hint": "Зарегистрируйтесь, чтобы просматривать образовательный контент",
+    "save": "Сохранить",
+    "register": "Зарегистрироваться",
+    "next": "Далее",
+    "logIn": "Войти",
+    "haveAnAccount": "Есть аккаунт?"
+  },
+  "fill_in_required_fields": {
+    "message": "Заполните обязательные поля",
+    "ok": "Ок"
+  },
+  "email_is_required": {
+    "message": "Введенный вами email уже зарегистрирован",
+    "ok": "Ок"
+  },
+  "choose_course": {
+    "message": "Вы не выбрали курс",
+    "ok": "Ок"
+  },
+  "step_one": {
+    "surname": "Фамилия",
+    "enterSurname": "Введите фамилию",
+    "name": "Имя",
+    "enterName": "Введите имя",
+    "patronymic": "Отчество",
+    "enterPatronymic": "Введите отчество",
+    "gender": "Пол",
+    "occupation": "Тип пользователя",
+    "phoneNumber": "Номер сотового телефона",
+    "region": "Регион жительства",
+    "uploadId": "Загрузите удостоверение личности",
+    "uploadHint": "Прилагаемый файл копии удостоверения личности обучающегося должен содержать черно-белое изображение удостоверения личности с обеих сторон на одной странице, должен быть отчетливым, не должен содержать посторонние изображения",
+    "interfaceLanguage": "Язык интерфейса"
+  },
+  "step_two": {
+    "workplace": "Место работы",
+    "enterWorkplace": "Введите название организации",
+    "position": "Должность",
+    "enterPosition": "Введите должность",
+    "specialty": "Специальность",
+    "uploadEmploymentCertificate": "Загрузите копию справки с места работы",
+    "uploadHint": "Прилагаемый файл копии справки с места работы обучающегося должен быть черно-белым, отчетливым, не должен содержать посторонние изображения"
+  },
+  "step_three": {
+    "university": "Наименование ВУЗа",
+    "enterUniversity": "Введите название ВУЗа",
+    "educationType": "Вид обучения",
+    "specialty": "Специальность по диплому",
+    "enterSpecialty": "Введите специальность",
+    "uploadDiploma": "Загрузите копию диплома",
+    "uploadHint": "Прилагаемый файл копии диплома обучающегося должен быть черно-белым, отчетливым, не должен содержать посторонние изображения"
+  },
+  "step_four": {
+    "enterEmail": "Введите e-mail",
+    "password": "Пароль",
+    "enterPassword": "Введите пароль",
+    "passwordRequirements": "требования к паролю",
+    "atLeast6characters": "не менее 6 символов",
+    "mustContainNumbersAndLatinCharacters": "должен содержать цифры и латинские символы",
+    "passwordConfirmation": "Подтвердите пароль",
+    "enterPasswordConfirmation": "Повторно введите пароль"
+  },
+  "search": {
+    "newsSection": "Раздел “Новости”",
+    "coursesSection": "Раздел “Курсы”",
+    "librarySection": "Раздел “Библиотека”"
+  },
+  "training": {
+    "aboutCourse": "Об этом курсе",
+    "selectMonth": "Выберите месяц",
+    "selectDate": "Выберите даты прохождения курса",
+    "takeCourse": "Пройти курс",
+    "noCourses": "Курсов нет"
+  },
+  "footer": {
+    "privacyPolicy": "Политика конфиденциальности"
+  }
+}

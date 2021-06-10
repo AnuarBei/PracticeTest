@@ -1,0 +1,24 @@
+<div [ngClass]="{ 'authorization': !appService.isOnImpairedMode, 'authorization_impaired': appService.isOnImpairedMode }">
+  <div class="title mrg-btm size--20">{{ 'authorization.welcome' | translate }}</div>
+  <div class="subtitle mrg-btm size--56">{{ 'authorization.hint' | translate }}</div>
+
+  <div class="form">
+    <div class="mrg-btm size--30">
+      <app-input (newValue)="credentials.email = $event" [value]="credentials.email" placeholder="{{ 'authorization.enterEmail' | translate }}" label="{{ 'authorization.email' | translate }}"></app-input>
+    </div>
+    <div class="mrg-btm size--10">
+      <app-input (newValue)="credentials.password = $event" [value]="credentials.password" (keyup.enter)="authenticate()" type="password" placeholder="{{ 'authorization.enterPassword' | translate }}" label="{{ 'authorization.password' | translate }}"></app-input>
+    </div>
+    <div class="mrg-btm size--10 invalid d-flex justify-content-end" *ngIf="isInvalid">
+      {{ 'authorization.incorrectCredentials' | translate }}
+    </div>
+    <div class="d-flex justify-content-between align-items-center mrg-btm size--30">
+      <app-checkbox>{{ 'authorization.rememberPassword' | translate }}</app-checkbox>
+      <a routerLink="/password-recovery" class="link">{{ 'authorization.forgotPassword' | translate }}</a>
+    </div>
+    <div class="d-flex justify-content-center mrg-btm size--30">
+      <app-button (click)="authenticate()">{{ 'authorization.logIn' | translate }}</app-button>
+    </div>
+    <div class="question">{{ 'authorization.doNotHaveAccount' | translate }} <a routerLink="/registration" class="link">{{ 'authorization.register' | translate }}</a></div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="row mrg-btm size--50">
+  <div class="col-lg-6">
+    <div class="mrg-btm size--30">
+      <app-input (newValue)="workplace.name_org = $event" [value]="workplace.name_org" placeholder="{{ 'step_two.enterWorkplace' | translate }}" label="{{ 'step_two.workplace' | translate }}" [required]="true"></app-input>
+    </div>
+    <div class="mrg-btm size--30">
+      <app-input (newValue)="workplace.position = $event" [value]="workplace.position" placeholder="{{ 'step_two.enterPosition' | translate }}" label="{{ 'step_two.position' | translate }}" [required]="true"></app-input>
+    </div>
+    <div class="mrg-btm size--30">
+      <app-select (newValue)="workplace.spec = $event" [value]="workplace.spec" label="{{ 'step_two.specialty' | translate }}" [options]="jobSpecialities" [required]="true"></app-select>
+    </div>
+    <div>
+      <app-image-uploader
+        (newValue)="workplace.doc = $event"
+        [value]="workplace.doc"
+        label="{{ 'step_two.uploadEmploymentCertificate' | translate }}"
+        hint="{{ 'step_two.uploadHint' | translate }}"></app-image-uploader>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div
+        class="d-flex justify-content-between"
+        [ngClass]="{ 'training': !appService.isOnImpairedMode, 'training_impaired': appService.isOnImpairedMode }"
+        *ngIf="course"
+      >
+        <div class="training__info mrg-rgt size--20">
+          <div class="training__title training__title_bold mrg-btm size--30">{{ course.name }}</div>
+          <div class="training__description mrg-btm size--70" [innerHTML]="course.about"></div>
+
+          <div class="training__title mrg-btm size--20">{{ 'training.aboutCourse' | translate }}</div>
+          <div [innerHTML]="course.syllabus"></div>
+<!--          <div class="mrg-btm size&#45;&#45;20">-->
+<!--            <span class="training__subtitle">Цель:</span> Изучите основы бухглатерии, 1С..Изучите основы бухглатерии,-->
+<!--          </div>-->
+<!--          <div class="training__subtitle">Задачи:</div>-->
+<!--          <div class="mrg-btm size&#45;&#45;30">-->
+<!--            <div *ngFor="let i of [0,0,0,0]">-->
+<!--              - Изучите основы бухглатерии, 1С..Изучите основы бухглатерии,-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="training__title mrg-btm size&#45;&#45;20">Вы изучите</div>-->
+<!--          <div class="mrg-btm size&#45;&#45;20">-->
+<!--            <div *ngFor="let i of [0,0,0,0]">-->
+<!--              - Изучите основы бухглатерии, 1С..Изучите основы бухглатерии,-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="training__expand mrg-btm size&#45;&#45;30">-->
+<!--            <div class="custom-icon plus-icon mrg-rgt size&#45;&#45;10"></div>-->
+<!--            <div class="expand">Развернуть</div>-->
+<!--          </div>-->
+
+<!--          <div class="training__title mrg-btm size&#45;&#45;20">Инструкции по сдаче тестов</div>-->
+<!--          <div class="mrg-btm size&#45;&#45;20">-->
+<!--            <div *ngFor="let i of [0,0,0,0]">-->
+<!--              - Изучите основы бухглатерии, 1С..Изучите основы бухглатерии,-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="training__expand mrg-btm size&#45;&#45;30">-->
+<!--            <div class="custom-icon plus-icon mrg-rgt size&#45;&#45;10"></div>-->
+<!--            <div>Развернуть</div>-->
+<!--          </div>-->
+
+<!--          <div class="training__title mrg-btm size&#45;&#45;20">Сведения о разработчиках курса</div>-->
+<!--          <div class="mrg-btm size&#45;&#45;20">-->
+<!--            <div *ngFor="let i of [0,0,0,0]">-->
+<!--              - Изучите основы бухглатерии, 1С..Изучите основы бухглатерии,-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="training__expand mrg-btm size&#45;&#45;30">-->
+<!--            <div class="custom-icon plus-icon mrg-rgt size&#45;&#45;10"></div>-->
+<!--            <div>Развернуть</div>-->
+<!--          </div>-->
+
+        </div>
+        <div class="training__datepicker">
+          <div class="d-flex align-items-center mrg-btm size--40">
+            <div class="training__description mrg-rgt size--12">{{ 'training.selectMonth' | translate }}</div>
+            <app-custom-select [options]="months" (newValue)="getDates($event)" [value]="month" class="mrg-rgt size--12"></app-custom-select>
+            <app-numberpicker (newValue)="year = $event; getMonths()" [value]="year"></app-numberpicker>
+          </div>
+          <div class="mrg-btm size--50" *ngIf="(!dates.length && month) || !months.length">{{ 'training.noCourses' | translate }}</div>
+          <div class="mrg-btm size--50">
+            <div class="training__description mrg-btm size--25" *ngIf="dates.length">{{ 'training.selectDate' | translate }}</div>
+            <app-radio-button [options]="dates" (newValue)="selectedCourse = $event"></app-radio-button>
+          </div>
+          <app-button (click)="createMyCourse()">{{ 'training.takeCourse' | translate }}</app-button>
+
+          <app-dialog *ngIf="showDialog" [alert]="'choose-course'" (closeDialog)="getResult($event)"></app-dialog>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

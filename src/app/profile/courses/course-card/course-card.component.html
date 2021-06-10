@@ -1,0 +1,73 @@
+<div
+  class="mrg-btm size--54"
+  [ngClass]="{ 'course-card': !appService.isOnImpairedMode, 'course-card_impaired': appService.isOnImpairedMode }"
+>
+  <div
+    class="course-card__image"
+    [ngStyle]="{ 'background-image': 'url(' + myCourse.course.image + ')' }"
+  ></div>
+  <div class="course-card__info pdg size--10" *ngIf="myCourse.course">
+    <div class="d-flex justify-content-between mrg-btm size--10">
+      <div class="course-card__title">{{ myCourse.course.name }}</div>
+      <div class="course-card__date">
+        {{ appService.moment(myCourse.start).format('DD.MM') }}
+        -
+        {{ appService.moment(myCourse.end).format('DD.MM') }}
+      </div>
+    </div>
+    <div class="course-card__description mrg-btm size--10">
+      {{ myCourse.course.description }}
+    </div>
+
+    <div class="course-card__progress d-flex flex-column justify-content-between">
+      <div *ngIf="status !== 3">
+        <div class="course-card__description d-flex justify-content-between mrg-btm size--10">
+          <div *ngIf="translate.currentLang === 'ru'">Пройдено: {{ myCourse.moduls_passed }} модулей из {{ myCourse.moduls_count }}</div>
+          <div *ngIf="translate.currentLang === 'kk'">{{ myCourse.moduls_count }} модульдің {{ myCourse.moduls_passed }} аяқтады</div>
+          <div class="course-card__description course-card__description_blue">{{ round(myCourse.moduls_passed * 100 / myCourse.moduls_count) }}%</div>
+        </div>
+        <div class="course-card__progress-bar mrg-btm size--14">
+          <mat-progress-bar mode="determinate" [value]="myCourse.moduls_passed * 100 / myCourse.moduls_count"></mat-progress-bar>
+        </div>
+        <div class="course-card__description mrg-btm size--10">
+          <div class="d-flex mrg-btm size--16">
+            <div class="custom-icon clock-icon mrg-rgt size--7" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+            <div class="course-card__field mrg-rgt size--5" *ngIf="translate.currentLang === 'ru'">до {{ status === 2 ? 'конца' : 'начала' }} курса -</div>
+            <div class="course-card__field mrg-rgt size--5" *ngIf="translate.currentLang === 'kk'">курстың {{ status === 2 ? 'соңына' : 'басталуына' }} дейін -</div>
+            <div class="course-card__timer">{{ status === 2 ? getUntil(myCourse.end) : getUntil(myCourse.start) }}</div>
+          </div>
+          <div class="d-flex">
+            <div class="custom-icon queue-icon mrg-rgt size--7" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+            <div class="course-card__field mrg-rgt size--5">{{ 'course_card.duration' | translate }} - </div>
+            <div class="course-card__hours">{{ duration }}</div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="status === 3" class="course-card__alert-message course-card__alert-message_finished">{{ 'course_card.courseHasBeenPassed' | translate }}</div>
+
+      <div [ngSwitch]="status">
+        <div *ngSwitchCase="0">
+          <div class="course-card__alert-message mrg-btm size--10">{{ 'course_card.youHaveToPassPreliminaryTest' | translate }}</div>
+          <div class="d-flex justify-content-end">
+            <app-button buttonType="small-red" width="306px" height="34px" (click)="goToTest()">{{ 'course_card.takePreliminaryTest' | translate }}</app-button>
+          </div>
+        </div>
+        <div *ngSwitchCase="1">
+          <div class="course-card__alert-message course-card__alert-message_success mrg-btm size--10">
+            {{ 'course_card.youHaveBeenPassedPreliminaryTest' | translate }} {{ getUntilText(this.myCourse.start) }}
+          </div>
+        </div>
+        <div *ngSwitchCase="2">
+          <div class="d-flex justify-content-end">
+            <app-button buttonType="small-blue" width="182px" height="34px" [routerLink]="'/profile/courses/' + myCourse.id">{{ 'course_card.continue' | translate }}</app-button>
+          </div>
+        </div>
+        <div *ngSwitchCase="3">
+          <div class="d-flex justify-content-end">
+            <app-button buttonType="small-blue" width="102px" height="34px" [routerLink]="'/profile/courses/' + myCourse.id">{{ 'course_card.moreDetails' | translate }}</app-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

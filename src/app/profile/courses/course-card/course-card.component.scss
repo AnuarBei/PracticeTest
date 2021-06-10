@@ -1,0 +1,137 @@
+.course-card {
+  cursor: pointer;
+  width: 360px;
+  min-height: 496px;
+  background: #FFFFFF;
+  border-radius: 15px;
+  overflow: hidden;
+  .course-card__info {
+    width: 350px;
+    min-height: 230px;
+    .course-card__progress {
+      min-height: 127px;
+    }
+    .course-card__title {
+      font-weight: bold;
+      font-size: 20px;
+      color: #333333;
+    }
+    .course-card__date {
+      font-weight: bold;
+      font-size: 20px;
+      color: #00409E;
+    }
+    .course-card__timer {
+      font-size: 17px;
+      color: #00409E;
+    }
+    .course-card__hours {
+      font-size: 17px;
+      color: #333333;
+    }
+    .course-card__description {
+      font-size: 12px;
+      line-height: 14px;
+      color: #717784;
+      &.course-card__description_blue {
+        color: #00409E;
+      }
+    }
+    .course-card__field {
+      width: 121px;
+    }
+    .course-card__alert-message {
+      font-size: 12px;
+      line-height: 14px;
+      color: #EB5757;
+      &.course-card__alert-message_success {
+        color: #219653;
+      }
+      &.course-card__alert-message_finished {
+        font-size: 15px;
+        line-height: 18px;
+        color: #219653;
+      }
+    }
+  }
+  .course-card__image {
+    width: 360px;
+    height: 266px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.course-card:focus {
+  outline: none;
+}
+
+.course-card_impaired {
+  cursor: pointer;
+  width: 360px;
+  min-height: 496px;
+  background: #FFFFFF;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #000000;
+  .course-card__info {
+    width: 350px;
+    min-height: 230px;
+    .course-card__progress {
+      min-height: 127px;
+    }
+    .course-card__title {
+      font-weight: bold;
+      font-size: 20px;
+      color: #000000;
+    }
+    .course-card__date {
+      font-weight: bold;
+      font-size: 20px;
+      color: #000000;
+    }
+    .course-card__timer {
+      font-size: 17px;
+      color: #000000;
+    }
+    .course-card__hours {
+      font-size: 17px;
+      color: #000000;
+    }
+    .course-card__description {
+      font-size: 12px;
+      line-height: 14px;
+      color: #000000;
+      &.course-card__description_blue {
+        color: #000000;
+      }
+    }
+    .course-card__field {
+      width: 121px;
+    }
+    .course-card__alert-message {
+      font-size: 12px;
+      line-height: 14px;
+      color: #000000;
+      &.course-card__alert-message_success {
+        color: #000000;
+      }
+      &.course-card__alert-message_finished {
+        font-size: 15px;
+        line-height: 18px;
+        color: #000000;
+      }
+    }
+  }
+  .course-card__image {
+    width: 360px;
+    height: 266px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #797979;
+  }
+}
+
+.course-card_impaired:focus {
+  outline: none;
+}

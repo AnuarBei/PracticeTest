@@ -1,0 +1,8 @@
+<div
+  class="d-flex flex-column align-items-center"
+  [ngClass]="{ 'page-not-found': !appService.isOnImpairedMode, 'page-not-found_impaired': appService.isOnImpairedMode }"
+>
+  <div class="custom-icon page-not-found-icon mrg-btm size--45" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+  <div class="mrg-btm size--36">{{ "page_not_found.notFound" | translate }}</div>
+  <app-button>{{ "page_not_found.return" | translate }}</app-button>
+</div>

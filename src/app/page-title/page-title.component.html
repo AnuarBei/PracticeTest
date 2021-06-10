@@ -1,0 +1,12 @@
+<div
+  *ngIf="routeName"
+  [ngClass]="{ 'page-title': !appService.isOnImpairedMode, 'page-title_impaired': appService.isOnImpairedMode }"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="title">{{ 'page_title.' + routeName | translate }}</div>
+      </div>
+    </div>
+  </div>
+</div>

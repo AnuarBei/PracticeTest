@@ -1,0 +1,12 @@
+<div
+  class="d-flex justify-content-between"
+  [ngClass]="{ 'numberpicker': !appService.isOnImpairedMode, 'numberpicker_impaired': appService.isOnImpairedMode }"
+>
+  <div class="d-flex align-items-center">
+    {{ value }}
+  </div>
+  <div class="d-flex flex-column justify-content-between">
+    <div class="custom-icon up-button-icon" (click)="changeBy(1)" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+    <div class="custom-icon up-button-icon custom-icon_reversed" (click)="changeBy(-1)" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+  </div>
+</div>

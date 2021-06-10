@@ -1,0 +1,29 @@
+.information {
+  color: #333333;
+  .title {
+    font-weight: 500;
+    font-size: 26px;
+  }
+  .checklist__title {
+    font-size: 22px;
+  }
+  .checklist__item {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+.information_impaired {
+  color: #000000;
+  .title {
+    font-weight: 500;
+    font-size: 26px;
+  }
+  .checklist__title {
+    font-size: 22px;
+  }
+  .checklist__item {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+}

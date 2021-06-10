@@ -1,0 +1,117 @@
+.home {
+  .title {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    color: #333333;
+  }
+  .subtitle {
+    font-size: 20px;
+    line-height: 150%;
+    color: #333333;
+  }
+
+  .notification {
+    padding: 5px 20px;
+    min-height: 50px;
+    width: 100%;
+    //max-width: 812px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    .notification__status {
+      width: 8.89px;
+      height: 8.89px;
+      border-radius: 100%;
+      background-color: #00409E;
+      &.notification__status_unread {
+
+      }
+    }
+    .notification__title {
+      font-size: 17px;
+      line-height: 150%;
+      color: #333333;
+    }
+    .notification__date {
+      font-size: 12px;
+      line-height: 14px;
+      color: #717784;
+    }
+    .notification__toggle {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 24px;
+      color: #00409E;
+    }
+    .notification__toggle:hover {
+      cursor: pointer;
+    }
+  }
+
+  .number-of-notifications {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: #333333;
+  }
+}
+
+
+.home_impaired {
+  .title {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    color: #000000;
+  }
+  .subtitle {
+    font-size: 20px;
+    line-height: 150%;
+    color: #000000;
+  }
+
+  .notification {
+    border: 1px solid #000000;
+    padding: 5px 20px;
+    min-height: 50px;
+    width: 100%;
+    //max-width: 812px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    .notification__status {
+      width: 8.89px;
+      height: 8.89px;
+      border-radius: 100%;
+      background-color: #000000;
+      &.notification__status_unread {
+
+      }
+    }
+    .notification__title {
+      font-size: 17px;
+      line-height: 150%;
+      color: #000000;
+    }
+    .notification__date {
+      font-size: 12px;
+      line-height: 14px;
+      color: #000000;
+    }
+    .notification__toggle {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 24px;
+      color: #000000;
+    }
+    .notification__toggle:hover {
+      cursor: pointer;
+    }
+  }
+
+  .number-of-notifications {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: #000000;
+  }
+}

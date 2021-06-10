@@ -1,0 +1,55 @@
+.search {
+  .search__result-response {
+    font-size: 20px;
+    line-height: 23px;
+    color: #333333;
+  }
+  .search__section {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    color: #333333;
+  }
+  .search__result-item {
+    cursor: pointer;
+    .search__result-item-title {
+      font-size: 26px;
+      line-height: 150%;
+      color: #333333;
+    }
+    .search__result-item-info {
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: 0.005em;
+      color: #717784;
+    }
+  }
+}
+
+.search_impaired {
+  .search__result-response {
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+  }
+  .search__section {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    color: #000000;
+  }
+  .search__result-item {
+    cursor: pointer;
+    .search__result-item-title {
+      font-size: 26px;
+      line-height: 150%;
+      color: #000000;
+    }
+    .search__result-item-info {
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: 0.005em;
+      color: #000000;
+    }
+  }
+}

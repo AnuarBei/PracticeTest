@@ -1,0 +1,256 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$vic-primary: mat-palette($mat-indigo);
+$vic-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$vic-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$vic-theme: mat-light-theme($vic-primary, $vic-accent, $vic-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($vic-theme);
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import 'styles/icons.scss';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.pdg-rgt {
+  &.size--5 {
+    padding-right: 5px;
+  }
+}
+.pdg-btm {
+  &.size--15 {
+    padding-bottom: 15px;
+  }
+}
+
+.pdg {
+  &.size--10 {
+    padding: 10px;
+  }
+}
+.mrg-rgt {
+  &.size--4 {
+    margin-right: 4px;
+  }
+  &.size--5 {
+    margin-right: 5px;
+  }
+  &.size--6 {
+    margin-right: 6px;
+  }
+  &.size--7 {
+    margin-right: 7px;
+  }
+  &.size--8 {
+    margin-right: 8px;
+  }
+  &.size--10 {
+    margin-right: 10px;
+  }
+  &.size--12 {
+    margin-right: 12px;
+  }
+  &.size--13 {
+    margin-right: 13px;
+  }
+  &.size--16 {
+    margin-right: 16px;
+  }
+  &.size--17 {
+    margin-right: 17px;
+  }
+  &.size--20 {
+    margin-right: 20px;
+  }
+  &.size--22 {
+    margin-right: 22px;
+  }
+  &.size--24 {
+    margin-right: 24px;
+  }
+  &.size--25 {
+    margin-right: 25px;
+  }
+  &.size--28 {
+    margin-right: 28px;
+  }
+  &.size--30 {
+    margin-right: 30px;
+  }
+  &.size--33 {
+    margin-right: 33px;
+  }
+  &.size--44 {
+    margin-right: 44px;
+  }
+}
+
+.mrg-top {
+  &.size--3 {
+    margin-top: 3px;
+  }
+  &.size--11 {
+    margin-top: 11px;
+  }
+  &.size--30 {
+    margin-top: 30px;
+  }
+  &.size--50 {
+    margin-top: 50px;
+  }
+  //&.size--12 {
+  //  margin-right: 12px;
+  //}
+  //&.size--20 {
+  //  margin-right: 20px;
+  //}
+}
+
+.mrg-btm {
+  &.size--6 {
+    margin-bottom: 6px;
+  }
+  &.size--7 {
+    margin-bottom: 7px;
+  }
+  &.size--8 {
+    margin-bottom: 8px;
+  }
+  &.size--10 {
+    margin-bottom: 10px;
+  }
+  &.size--12 {
+    margin-bottom: 12px;
+  }
+  &.size--13 {
+    margin-bottom: 13px;
+  }
+  &.size--14 {
+    margin-bottom: 14px;
+  }
+  &.size--15 {
+    margin-bottom: 15px;
+  }
+  &.size--16 {
+    margin-bottom: 16px;
+  }
+  &.size--18 {
+    margin-bottom: 18px;
+  }
+  &.size--20 {
+    margin-bottom: 20px;
+  }
+  &.size--23 {
+    margin-bottom: 23px;
+  }
+  &.size--25 {
+    margin-bottom: 25px;
+  }
+  &.size--27 {
+    margin-bottom: 27px;
+  }
+  &.size--30 {
+    margin-bottom: 30px;
+  }
+  &.size--31 {
+    margin-bottom: 31px;
+  }
+  &.size--34 {
+    margin-bottom: 34px;
+  }
+  &.size--36 {
+    margin-bottom: 36px;
+  }
+  &.size--38 {
+    margin-bottom: 38px;
+  }
+  &.size--40 {
+    margin-bottom: 40px;
+  }
+  &.size--45 {
+    margin-bottom: 45px;
+  }
+  &.size--50 {
+    margin-bottom: 50px;
+  }
+  &.size--54 {
+    margin-bottom: 54px;
+  }
+  &.size--56 {
+    margin-bottom: 56px;
+  }
+  &.size--64 {
+    margin-bottom: 64px;
+  }
+  &.size--70 {
+    margin-bottom: 70px;
+  }
+  &.size--77 {
+    margin-bottom: 77px;
+  }
+  &.size--82 {
+    margin-bottom: 82px;
+  }
+  &.size--100  {
+    margin-bottom: 100px;
+  }
+}
+
+
+
+html, body { height: 100%; }
+
+html, body { height: 100%; }
+
+.mat-raised-button.mat-primary {
+    background: #00409E;
+}
+
+.body {
+  background-color: #f4f3f3;
+  min-height: 621px;
+  padding: 0 0 75px 0;
+  // padding: 50px 0 75px 0;
+  &.dim-background {
+    background-color: #E5E5E5;
+  }
+
+  &.body_impaired {
+    background-color: #FFFFFF;
+    filter: grayscale(1);
+  }
+}
+
+//* {
+//  filter: grayscale(1);
+//}
+
+textarea:focus, input:focus, div:focus, select:focus {
+  outline: none;
+}
+
+.check {
+  border: 1px solid black;
+}

@@ -1,0 +1,104 @@
+<div
+  [ngClass]="{ 'test-results': !appService.isOnImpairedMode, 'test-results_impaired': appService.isOnImpairedMode }"
+  *ngIf="status === 'overview' && test"
+>
+  <div class="test-results__header d-flex justify-content-between mrg-btm size--27">
+    <div class="title" *ngIf="myTest">{{ myTest.text }}</div>
+    <div class="title" *ngIf="!myTest">{{ 'test_results.testing' | translate }}</div>
+    <div>
+      <app-select (newValue)="getResults($event)" [value]="test.id" [options]="myTests" [style]="style"></app-select>
+    </div>
+  </div>
+  <div class="question-tabs mrg-btm size--50">
+    <div
+      *ngFor="let question of test.questions; let i = index;"
+      class="question-tabs__item h-100"
+      (click)="selectActiveQuestion(i, question)"
+      [ngClass]="{ 'question-tabs__item_incorrect': getCorrectOption(question).id !== answers[i].option }"
+    >{{ 'test_results.question' | translate }} {{ i + 1 }}</div>
+  </div>
+  <div class="question">
+    <div class="question__number mrg-btm size--20">{{ 'test_results.question' | translate }} {{ activeQuestion.index + 1 }}/{{ test.questions.length }}</div>
+    <div class="question__itself mrg-btm size--23">{{ activeQuestion.value }}</div>
+    <div class="mrg-btm size--40">
+      <app-radio-button [options]="activeQuestion.options" [answer]="answers[activeQuestion.index]" [styles]="styles" [disabled]="true"></app-radio-button>
+    </div>
+    <div class="d-flex flex-column align-items-center">
+      <div class="mrg-btm size--25">
+        <app-button (click)="close()">{{ 'test_results.close' | translate }}</app-button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="status === 'success' && test" class="test-results d-flex flex-column align-items-center">
+  <div class="text text_main mrg-btm size--13">{{ 'test_results.congratulations' | translate }}</div>
+  <div class="text mrg-btm size--31">{{ 'test_results.youHavePassedTest' | translate }}</div>
+  <div class="statistics mrg-btm size--31">
+    <div class="statistics__column">
+      <div class="statistics__title">{{ 'test_results.totalQuestions' | translate }}</div>
+      <div class="statistics__value">{{ test.questions.length }}</div>
+    </div>
+    <div class="statistics__column">
+      <div class="statistics__title">{{ 'test_results.correctAnswers' | translate }}</div>
+      <div class="statistics__value statistics__value_green">{{ correctAnswers }}</div>
+    </div>
+    <div class="statistics__column">
+      <div class="statistics__title">{{ 'test_results.requiredNumberOfCorrectAnswers' | translate }}</div>
+      <div class="statistics__value statistics__value_blue">{{ test.min }}</div>
+    </div>
+  </div>
+<!--  <div class="text text_main mrg-btm size&#45;&#45;20">Образовательный курс успешно пройден!</div>-->
+<!--  <div class="link link_light-underlined mrg-btm size&#45;&#45;50" (click)="navigate('/profile/certificates')">Посмотреть сертификат</div>-->
+  <div class="mrg-btm size--30" (click)="navigate('/profile/courses')">
+    <app-button>{{ 'test_results.done' | translate }}</app-button>
+  </div>
+  <div class="link" (click)="status = 'overview'">{{ 'test_results.viewTestResults' | translate }}</div>
+</div>
+
+<div *ngIf="status === 'fail' && test" class="test-results d-flex flex-column align-items-center">
+  <div class="text text_main mrg-btm size--13">{{ 'test_results.unfortunately' | translate }}</div>
+  <div class="text mrg-btm size--31">{{ 'test_results.youHaveFailedTest' | translate }}</div>
+  <div class="statistics mrg-btm size--31">
+    <div class="statistics__column">
+      <div class="statistics__title">{{ 'test_results.totalQuestions' | translate }}</div>
+      <div class="statistics__value">{{ test.questions.length }}</div>
+    </div>
+    <div class="statistics__column">
+      <div class="statistics__title">{{ 'test_results.correctAnswers' | translate }}</div>
+      <div class="statistics__value statistics__value_red">{{ correctAnswers }}</div>
+    </div>
+    <div class="statistics__column">
+      <div class="statistics__title">{{ 'test_results.requiredNumberOfCorrectAnswers' | translate }}</div>
+      <div class="statistics__value statistics__value_blue">{{ test.min }}</div>
+    </div>
+  </div>
+  <div class="text text_big mrg-btm size--40" *ngIf="translate.currentLang === 'ru'">У Вас осталось {{ test.max - test.attempts }} попытки(-ок) повторного прохождения теста</div>
+  <div class="text text_big mrg-btm size--40" *ngIf="translate.currentLang === 'kk'">Сізде {{ test.max - test.attempts }} қайталау әрекеті қалды</div>
+  <div class="mrg-btm size--30" (click)="goBack()">
+    <app-button>{{ 'test_results.tryAgain' | translate }}</app-button>
+  </div>
+  <div class="link" (click)="navigate('/profile/courses')">{{ 'test_results.backToCourse' | translate }}</div>
+</div>
+
+<div *ngIf="status === 'time-is-up' && test" class="test-results d-flex flex-column align-items-center">
+  <div class="text text_main mrg-btm size--13">{{ 'test_results.timeIsUp' | translate }}</div>
+  <div class="text mrg-btm size--30">{{ 'test_results.timeIsUpFull' | translate }}</div>
+  <div class="custom-icon hourglass-icon mrg-btm size--30" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+
+  <ng-template [ngIf]="translate.currentLang === 'ru'">
+    <div class="text text_big mrg-btm size--50" *ngIf="test.max - test.attempts > 0">У Вас осталось {{ test.max - test.attempts }} попытки(-ок) повторного прохождения теста</div>
+  </ng-template>
+  <ng-template [ngIf]="translate.currentLang === 'kk'">
+    <div class="text text_big mrg-btm size--50" *ngIf="test.max - test.attempts > 0">Сізде {{ test.max - test.attempts }} қайталау әрекеті қалды</div>
+  </ng-template>
+
+  <div class="text-center mrg-btm size--30" *ngIf="test.max - test.attempts <= 0">
+    <div class="text text_big mrg-btm size--13">{{ 'test_results.youHaveNoMoreAttempts' | translate }}</div>
+    <div class="text text_main">{{ 'test_results.courseNotPassed' | translate }}</div>
+  </div>
+
+  <div class="mrg-btm size--30" (click)="goBack()">
+    <app-button>{{ 'test_results.tryAgain' | translate }}</app-button>
+  </div>
+</div>

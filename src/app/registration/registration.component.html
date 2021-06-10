@@ -1,0 +1,19 @@
+<div
+  [ngClass]="{ 'registration': !appService.isOnImpairedMode, 'registration_impaired': appService.isOnImpairedMode }"
+>
+  <div class="title mrg-btm size--20">{{ 'registration.welcome' | translate }}</div>
+  <div class="subtitle mrg-btm size--56">{{ 'registration.hint' | translate }}</div>
+  <div class="container">
+    <app-step-one *ngIf="step === 1" [user]="user"></app-step-one>
+    <app-step-two *ngIf="step === 2 && user.occupation !== 3" [workplace]="workplace"></app-step-two>
+    <app-step-three *ngIf="step === 3" [education]="education" [user]="user"></app-step-three>
+    <app-step-four *ngIf="step === 4" [user]="user" [passwordInvalid]="passwordInvalid"></app-step-four>
+    <div class="d-flex justify-content-center mrg-btm size--30">
+      <app-button (click)="nextStep()">{{ step === 4 ? (user.id ? ('registration.save' | translate) : ('registration.register' | translate)) : ('registration.next' | translate) }}</app-button>
+    </div>
+    <div class="question text-center">{{ 'registration.haveAnAccount' | translate }} <a routerLink="/authorization" class="link">{{ 'registration.logIn' | translate }}</a></div>
+  </div>
+
+  <app-dialog *ngIf="showEmailDialog" [alert]="'email-is-required'" (closeDialog)="getResult($event)"></app-dialog>
+  <app-dialog *ngIf="showDialog" [alert]="'fill-in-required-fields'" (closeDialog)="getResult($event)"></app-dialog>
+</div>

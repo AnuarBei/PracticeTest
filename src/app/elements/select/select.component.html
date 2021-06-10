@@ -1,0 +1,14 @@
+<div
+  class="d-flex mrg-btm size--6" *ngIf="label"
+  [ngClass]="{ 'label': !appService.isOnImpairedMode, 'label_impaired': appService.isOnImpairedMode }"
+>
+  {{ label }}
+  <div *ngIf="required" class="label__required-mark"></div>
+</div>
+<select
+  [ngClass]="{ 'select': !appService.isOnImpairedMode, 'select_impaired': appService.isOnImpairedMode }"
+  (change)="emitNewValue($event)" [ngStyle]="style"
+>
+  <option disabled selected value="{{ 'select.not_chosen' | translate }}">{{ 'select.not_chosen' | translate }}</option>
+  <option *ngFor="let option of options" [value]="option.value" [selected]="option.value === value">{{ option.text }}</option>
+</select>

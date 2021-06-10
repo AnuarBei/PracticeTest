@@ -1,0 +1,183 @@
+<div [ngClass]="{ 'course': !appService.isOnImpairedMode, 'course_impaired': appService.isOnImpairedMode }"
+    *ngIf="myCourse">
+    <div class="d-flex justify-content-between mrg-btm size--20">
+        <div class="course__video d-flex flex-fill">
+            <!-- loading -->
+            <div *ngIf="isLoading" class="d-flex justify-content-center align-items-center h-100 w-100 ">
+                <div class="loadingio-spinner-rolling-twa6wk21sx">
+                    <div class="ldio-mxuue4my1zt">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!isLoading" id="video"></div>
+        </div>
+        <div class="modules-list">
+            <div class="scroll-container">
+                <div class="modules-list__item d-flex align-items-center" (click)="goToTestOrResults(1)">
+                    <!-- (click)="goToTest(myCourse.course.test, !myCourse.tested && status !== 0)" -->
+                    <div class="modules-list__item-title modules-list__item-title_passed">
+                        {{ 'course.preliminaryTest' | translate }}</div>
+                </div>
+                <div *ngFor="let module of myCourse.course.moduls; let i = index;"
+                    (click)="selectModule(module, myCourse.moduls_passed >= i)">
+                    <div (click)="toggleModule(i)"
+                        class="modules-list__item d-flex justify-content-between align-items-center"
+                        [ngClass]="{ 'mrg-btm size--6': expandedItemIndex === i }">
+                        <div>
+                            <div class="modules-list__item-title"
+                                [ngClass]="{ 'modules-list__item-title_passed': myCourse.moduls_passed >= i && myCourse.tested }">
+                                {{ 'course.module' | translate }} {{ i + 1 }}: {{ module.name }}</div>
+                            <div class="modules-list__item-short-info">{{ 'course.numberOfChapters' | translate }}:
+                                {{ module.chapters.length }}</div>
+                            <!--                <div class="modules-list__item-short-info">6/8 | 60 мин.</div>-->
+                        </div>
+                        <div class="custom-icon arrow-to-down-icon arrow-to-down-icon_gray"
+                            [ngClass]="{ 'custom-icon_reversed': expandedItemIndex === i, 'custom-icon_impaired': appService.isOnImpairedMode }">
+                        </div>
+                    </div>
+
+                    <div *ngIf="expandedItemIndex === i">
+                        <div *ngFor="let chapter of module.chapters; let j = index;"
+                            (click)="selectChapter(chapter, i, j)"
+                            class="modules-list__chapter d-flex align-items-start mrg-btm size--10">
+                            <div class="mrg-rgt size--13 mrg-top size--3">
+                                <app-checkbox [checked]="myCourse.chapters_passed >= j || myCourse.moduls_passed > i">
+                                </app-checkbox>
+                            </div>
+                            <div>
+                                <div class="modules-list__chapter-title mrg-btm size--12"
+                                    [ngClass]="{ 'modules-list__chapter-title_passed': myCourse.chapters_passed >= j || myCourse.moduls_passed > i }">
+                                    {{ j + 1 }}. {{ chapter.name }}</div>
+                                <div class="d-flex align-items-center">
+                                    <div class="custom-icon play-icon mrg-rgt size--4"
+                                        [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+                                    <div class="modules-list__item-short-info">10 мин.</div>
+                                </div>
+                                <!-- Тест завершен -->
+                                <!--                  <div class="d-flex align-items-center">-->
+                                <!--                    <div class="custom-icon checklist-small-icon checklist-small-icon_green mrg-rgt size&#45;&#45;4"></div>-->
+                                <!--                    <div class="modules-list__item-short-info modules-list__item-short-info_green mrg-rgt size&#45;&#45;8">Завершен</div>-->
+                                <!--                    <div class="modules-list__item-short-info modules-list__item-short-info_blue-underlined">Посмотреть результат</div>-->
+                                <!--                  </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="expandedItemIndex === i">
+                        <div class="modules-list__chapter d-flex align-items-start mrg-btm size--10">
+                            <div class="mrg-rgt size--13 mrg-top size--3">
+                                <app-checkbox
+                                    [checked]="myCourse.chapters_passed === module.chapters.length || myCourse.moduls_passed > i">
+                                </app-checkbox>
+                            </div>
+                            <div
+                                (click)="goToTest(module.test, myCourse.chapters_passed === module.chapters.length && myCourse.moduls_passed == i)">
+                                <div class="modules-list__chapter-title mrg-btm size--12"
+                                    [ngClass]="{ 'modules-list__chapter-title_passed': myCourse.chapters_passed === module.chapters.length || myCourse.moduls_passed > i }">
+                                    {{ 'course.moduloTest' | translate }} {{ i + 1 }}</div>
+                                <!-- tick only if myCourse.moduls_passed > i -->
+                                <!-- Тест завершен -->
+                                <div class="d-flex align-items-center"
+                                    *ngIf="myCourse.moduls_passed > i; else notPassed">
+                                    <div class="custom-icon checklist-small-icon checklist-small-icon_green mrg-rgt size--4"
+                                        [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+                                    <div
+                                        class="modules-list__item-short-info modules-list__item-short-info_green mrg-rgt size--8">
+                                        {{ 'course.completed' | translate }}</div>
+                                    <div class="modules-list__item-short-info modules-list__item-short-info_blue-underlined"
+                                        (click)="navigate('/profile/courses/test-results/' + module.test.id)">
+                                        {{ 'course.viewResult' | translate }}</div>
+                                </div>
+                                <ng-template #notPassed>
+                                    <div class="d-flex align-items-center">
+                                        <div class="custom-icon checklist-small-icon mrg-rgt size--4"
+                                            [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+                                        <div class="modules-list__item-short-info">{{ module.test.duration }} мин.</div>
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modules-list__item d-flex align-items-center" (click)="goToTestOrResults(3)">
+                    <div class="modules-list__item-title"
+                        [ngClass]="{ 'modules-list__item-title_passed': myCourse.moduls_passed === myCourse.moduls_count }">
+                        {{ 'course.finalTest' | translate }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between mrg-btm size--20" *ngIf="status === 3">
+        <div class="course__alert course__alert_success flex-fill mrg-rgt size--25">
+            {{ 'course.courseHasBeenPassed' | translate }}
+        </div>
+        <div class="course__buttons d-flex">
+            <app-button buttonType="small-white" width="247px" height="40px" class="mrg-rgt size--24"
+                (click)="navigate('/profile/certificates/')">{{ 'course.goToCertificates' | translate }}</app-button>
+            <app-button buttonType="small-white" width="202px" height="40px">{{ 'course.testResults' | translate }}
+            </app-button>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between mrg-btm size--20">
+        <div class="d-flex justify-content-around flex-fill course__tabs mrg-rgt size--25">
+            <div class="course__tab h-100 d-flex justify-content-center align-items-center"
+                [ngClass]="{ course__tab_active: tab === 0 }" (click)="tab = 0">{{ 'course.syllabus' | translate }}
+            </div>
+            <div class="course__tab h-100 d-flex justify-content-center align-items-center"
+                [ngClass]="{ course__tab_active: tab === 1 }" (click)="tab = 1" *ngIf="status !== 0">
+                {{ 'course.usefulLinks' | translate }}</div>
+            <div class="course__tab h-100 d-flex justify-content-center align-items-center" *ngIf="status === 0"></div>
+        </div>
+        <div class="course__short-info d-flex justify-content-between">
+            <div>
+                <div class="d-flex">
+                    <div class="custom-icon clock-icon mrg-rgt size--7"
+                        [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+                    <div class="course__text mrg-btm size--7" *ngIf="translate.currentLang === 'ru'">до
+                        {{ status === 2 ? 'конца' : 'начала' }} курса</div>
+                    <div class="course__text mrg-btm size--7" *ngIf="translate.currentLang === 'kk'">курстың
+                        {{ status === 2 ? 'соңына' : 'басталуына' }} дейін -</div>
+                </div>
+                <div class="course__timer">{{ status === 2 ? getUntil(myCourse.end) : getUntil(myCourse.start) }}</div>
+            </div>
+            <div class="course__progress">
+                <div class="d-flex justify-content-between mrg-btm size--18">
+                    <div class="course__text" *ngIf="translate.currentLang === 'ru'">Пройдено:
+                        {{ myCourse.moduls_passed }} модулей из {{ myCourse.moduls_count }}</div>
+                    <div class="course__text" *ngIf="translate.currentLang === 'kk'">{{ myCourse.moduls_count }}
+                        модульдің {{ myCourse.moduls_passed }} аяқтады</div>
+                    <div class="course__text course__text_blue">
+                        {{ round(myCourse.moduls_passed * 100 / myCourse.moduls_count) }}%</div>
+                </div>
+                <mat-progress-bar mode="determinate" [value]="myCourse.moduls_passed * 100 / myCourse.moduls_count">
+                </mat-progress-bar>
+            </div>
+        </div>
+    </div>
+
+    <div class="course__alert mrg-btm size--36" *ngIf="status === 0">
+        <div class="mrg-btm size--20">
+            {{ 'course.youHaveFailedPreliminaryTest' | translate }}
+        </div>
+        <app-button width="226px" (click)="navigate('/training' + myCourse.course.id)">{{ 'course.plan' | translate }}
+        </app-button>
+    </div>
+
+    <div *ngIf="tab === 0">
+        <div class="course__tab-title mrg-btm size--20">{{ 'course.aboutCourse' | translate }}</div>
+        <div class="course__tab-body" [innerHTML]="myCourse.course.syllabus"></div>
+    </div>
+
+    <div *ngIf="tab === 1">
+        <div class="course__tab-title mrg-btm size--20">{{ 'course.usefulLinks' | translate }}</div>
+        <div class="course__tab-body" *ngIf="module">
+            <div class="mrg-btm size--20" *ngFor="let link of module.links; let i = index;">
+                <div>{{ i + 1 }}. {{ link.name }}:</div>
+                <a target="_blank" [href]="link.link">{{ link.link }}</a>
+            </div>
+        </div>
+    </div>
+</div>

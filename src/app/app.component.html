@@ -1,0 +1,14 @@
+<div>
+  <app-header></app-header>
+  <app-page-title></app-page-title>
+
+  <div
+    class="body dim-background"
+    [ngClass]="{ 'dim-background': dimBackground, 'body_impaired': appService.isOnImpairedMode }"
+    [ngStyle]="{ 'padding-top': isMain ? '0' : '50px' }"
+  >
+    <router-outlet></router-outlet>
+  </div>
+
+  <app-footer></app-footer>
+</div>

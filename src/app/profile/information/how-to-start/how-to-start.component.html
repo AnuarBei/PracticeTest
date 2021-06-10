@@ -1,0 +1,43 @@
+<div
+  [ngClass]="{ 'how-to-start': !appService.isOnImpairedMode, 'how-to-start_impaired': appService.isOnImpairedMode }"
+>
+  <div class="title mrg-btm size--50">{{ 'how_to_start.howToStart' | translate }}</div>
+  <div class="d-flex justify-content-between">
+    <div class="how-to-start__step">
+      <div class="custom-icon user-icon mrg-btm size--15" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+      <div>{{ 'how_to_start.registration' | translate }}</div>
+    </div>
+    <div class="how-to-start__arrows">
+      <div class="custom-icon arrow-to-right-icon" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+      <div class="custom-icon arrow-to-right-icon" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+    </div>
+    <div class="how-to-start__step">
+      <div class="custom-icon checklist-with-tick-icon mrg-btm size--15" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+      <div>{{ 'how_to_start.preliminaryTest' | translate }}</div>
+    </div>
+    <div class="how-to-start__arrows">
+      <div class="custom-icon arrow-to-right-icon" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+      <div class="custom-icon arrow-to-right-icon" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+    </div>
+    <div class="how-to-start__step">
+      <div class="custom-icon books-icon mrg-btm size--15" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+      <div>{{ 'how_to_start.passingCourse' | translate }}</div>
+    </div>
+    <div class="how-to-start__arrows">
+      <div class="custom-icon arrow-to-right-icon" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+      <div class="custom-icon arrow-to-right-icon" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+    </div>
+    <div class="how-to-start__step">
+      <div class="custom-icon checklist-with-a-star-icon mrg-btm size--15" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+      <div>{{ 'how_to_start.finalTesting' | translate }}</div>
+    </div>
+    <div class="how-to-start__arrows">
+      <div class="custom-icon arrow-to-right-icon" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+      <div class="custom-icon arrow-to-right-icon" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+    </div>
+    <div class="how-to-start__step">
+      <div class="custom-icon pc-icon mrg-btm size--15" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+      <div>{{ 'how_to_start.obtainingCertificate' | translate }}</div>
+    </div>
+  </div>
+</div>

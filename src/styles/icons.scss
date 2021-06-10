@@ -1,0 +1,265 @@
+.custom-icon {
+  width: 24px;
+  height: 24px;
+
+  &.custom-icon_impaired {
+    filter: grayscale(1);
+  }
+
+  &.custom-icon_reversed {
+    transform: rotate(180deg);
+  }
+
+  &.logo-icon__black {
+    width: 269px;
+    height: 56px;
+    background: url("assets/icons/vic-black.svg") no-repeat;
+  }
+
+  &.logo-icon__white {
+    width: 269px;
+    height: 56px;
+    background: url("assets/icons/vic-white.svg") no-repeat;
+  }
+
+  //&.wave-icon {
+  //  width: 1440px;
+  //  height: 191px;
+  //  background: url("assets/icons/footer-background.svg") no-repeat;
+  //}
+
+  &.phone-icon {
+    background: url("assets/icons/phone.svg") no-repeat;
+  }
+
+  &.phone-icon__blue {
+    width: 32px;
+    height: 32px;
+    background: url("assets/icons/phone-blue.svg") no-repeat;
+  }
+
+  &.mail-icon {
+    width: 32px;
+    height: 32px;
+    background: url("assets/icons/mail.svg") no-repeat;
+  }
+
+  &.profile-icon {
+    width: 20px;
+    height: 21px;
+    background: url("assets/icons/profile.svg") no-repeat;
+  }
+
+  &.eye-icon {
+    width: 25px;
+    height: 25px;
+    background: url("assets/icons/eye.svg") no-repeat;
+  }
+
+  &.facebook-icon {
+    width: 12px;
+    height: 12px;
+    background: url("assets/icons/facebook.svg") no-repeat;
+  }
+
+  &.google-icon {
+    width: 12px;
+    height: 12px;
+    background: url("assets/icons/google.svg") no-repeat;
+  }
+
+  &.linkedin-icon {
+    width: 12px;
+    height: 12px;
+    background: url("assets/icons/linkedin.svg") no-repeat;
+  }
+
+  &.instagram-icon {
+    width: 16px;
+    height: 16px;
+    background: url("assets/icons/instagram.svg") no-repeat;
+  }
+
+  &.email-icon {
+    width: 100px;
+    height: 100px;
+    background: url("assets/icons/email.svg") no-repeat;
+  }
+
+  &.image-uploader-icon {
+    width: 230px;
+    height: 118px;
+    background: url("assets/icons/image.svg") no-repeat;
+  }
+
+  &.remove-icon {
+    width: 28px;
+    height: 28px;
+    background: url("assets/icons/remove.svg") no-repeat;
+  }
+
+  &.arrow-to-down-icon {
+    width: 10px;
+    height: 6px;
+    background: url("assets/icons/arrow-to-down.svg") no-repeat;
+
+    &.arrow-to-down-icon_gray {
+      width: 16px;
+      height: 8px;
+      background: url("assets/icons/arrow-to-down-gray.svg") no-repeat;
+    }
+  }
+
+  &.bell-icon {
+    width: 32px;
+    height: 32px;
+    background: url("assets/icons/bell.svg") no-repeat;
+  }
+
+  &.marked-bell-icon {
+    width: 32px;
+    height: 32px;
+    background: url("assets/icons/marked-bell.svg") no-repeat;
+  }
+
+  &.default-avatar-icon {
+    width: 150px;
+    height: 150px;
+    background: url("assets/icons/default-avatar.svg") no-repeat;
+  }
+  &.edit-icon {
+    width: 14px;
+    height: 14px;
+    background: url("assets/icons/edit.svg") no-repeat;
+  }
+
+  &.checklist-icon {
+    width: 174px;
+    height: 200px;
+    background: url("assets/icons/checklist.svg") no-repeat;
+  }
+
+  &.profile-big-icon {
+    width: 173px;
+    height: 173px;
+    background: url("assets/icons/profile-big.svg") no-repeat;
+  }
+
+  &.books-icon {
+    width: 70px;
+    height: 70px;
+    background: url("assets/icons/books.svg") no-repeat;
+  }
+
+  &.user-icon {
+    width: 70px;
+    height: 70px;
+    background: url("assets/icons/user.svg") no-repeat;
+  }
+
+  &.pc-icon {
+    width: 70px;
+    height: 70px;
+    background: url("assets/icons/pc.svg") no-repeat;
+  }
+
+  &.checklist-with-tick-icon {
+    width: 70px;
+    height: 68px;
+    background: url("assets/icons/checklist-with-tick.svg") no-repeat;
+  }
+
+  &.checklist-with-a-star-icon {
+    width: 70px;
+    height: 70px;
+    background: url("assets/icons/checklist-with-a-star.svg") no-repeat;
+  }
+
+  &.arrow-to-right-icon {
+    width: 28px;
+    height: 41px;
+    background: url("assets/icons/arrow-to-right.svg") no-repeat;
+  }
+
+  &.plus-icon {
+    width: 14px;
+    height: 14px;
+    background: url("assets/icons/plus.svg") no-repeat;
+  }
+
+  &.up-button-icon {
+    width: 16px;
+    height: 16px;
+    background: url("assets/icons/up-button.svg") no-repeat;
+  }
+
+  &.download-icon {
+    background: url("assets/icons/download.svg") no-repeat;
+  }
+
+  &.clock-icon {
+    width: 16px;
+    height: 16px;
+    background: url("assets/icons/clock.svg") no-repeat;
+  }
+
+  &.queue-icon {
+    width: 16px;
+    height: 16px;
+    background: url("assets/icons/queue.svg") no-repeat;
+  }
+
+  &.play-icon {
+    width: 15px;
+    height: 15px;
+    background: url("assets/icons/play.svg") no-repeat;
+  }
+  &.checklist-small-icon {
+    width: 15px;
+    height: 15px;
+    background: url("assets/icons/checklist-small.svg") no-repeat;
+    &.checklist-small-icon_green {
+      background: url("assets/icons/checklist-small-green.svg") no-repeat;
+    }
+  }
+
+  &.page-not-found-icon {
+    width: 262px;
+    height: 210px;
+    background: url("assets/icons/404.svg") no-repeat;
+  }
+
+  &.hourglass-icon {
+    width: 100px;
+    height: 100px;
+    background: url("assets/icons/hourglass.svg") no-repeat;
+  }
+
+  &.macbook-icon {
+    width: 698px;
+    height: 949px;
+    background: url("assets/icons/macbook.svg") no-repeat;
+  }
+
+  &.main-slide-icon {
+    width: 820px;
+    height: 577px;
+    background: url("assets/icons/main-slide.svg") no-repeat;
+  }
+
+  &.slider-arrow-icon {
+    width: 69px;
+    height: 69px;
+    background: url("assets/icons/slider-arrow.svg") no-repeat;
+  }
+
+  &.search-icon {
+    background: url("assets/icons/search.svg") no-repeat;
+  }
+
+  &.manuscript-icon {
+    width: 144px;
+    height: 142px;
+    background: url("assets/icons/manuscript.svg") no-repeat;
+  }
+}

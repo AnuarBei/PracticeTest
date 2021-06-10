@@ -1,0 +1,59 @@
+.registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    color: #333333;
+  }
+  .subtitle {
+    font-size: 20px;
+    line-height: 23px;
+    color: #333333;
+  }
+  .question {
+    font-size: 15px;
+    line-height: 24px;
+    color: #3C4858;
+  }
+
+  .link {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: #00409E;
+  }
+}
+
+.registration_impaired {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    color: #000000;
+  }
+  .subtitle {
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+  }
+  .question {
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+  }
+
+  .link {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+  }
+}

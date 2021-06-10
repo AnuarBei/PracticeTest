@@ -1,0 +1,9 @@
+<mat-dialog-actions>
+  <div
+    [ngClass]="{ 'must-be-answered': !appService.isOnImpairedMode, 'must-be-answered_impaired': appService.isOnImpairedMode }"
+    class="d-flex flex-column align-items-center justify-content-center text-center"
+  >
+    <div class="mrg-btm size--50">{{ 'must_be_answered.message' | translate }}</div>
+    <app-button mat-dialog-close mat-dialog-close="continue">{{ 'must_be_answered.continue' | translate }}</app-button>
+  </div>
+</mat-dialog-actions>

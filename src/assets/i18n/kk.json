@@ -1,0 +1,313 @@
+{
+  "name": "Контрацепцияның заманауи әдістері туралы онлайн білім беру платформасы",
+  "copyright": "Контрацепцияның заманауи әдістері бойынша 2021 онлайн-білім беру платформасы. Барлық құқықтар сақталған",
+  "authorization": {
+    "welcome": "Қош келдіңіз!",
+    "hint": "Білім беру мазмұнын көру үшін жүйеге кіріңіз",
+    "login": "Кіру",
+    "email": "Электрондық пошта",
+    "enterLogin": "Құпия сөз енгізіңіз",
+    "enterEmail": "Электрондық пошта енгізіңіз",
+    "password": "Құпия сөз",
+    "enterPassword": "Құпия сөз енгізіңіз",
+    "incorrectCredentials": "Дұрыс емес мәліметтер",
+    "rememberPassword": "Құпия сөзді есте сақтаңыз",
+    "forgotPassword": "Құпия сөз есімде жоқ",
+    "logIn": "Кіру",
+    "register": "Қазір тіркеліңіз",
+    "doNotHaveAccount": "Есептік жазбаңыз жоқ па?"
+  },
+  "contacts": {
+    "phone": "Телефон:",
+    "address": "Мекен-жай:",
+    "schedule": "Жұмыс кестесі:"
+  },
+  "custom_select": {
+    "month": "Ай"
+  },
+  "select": {
+    "not_chosen": "Таңдалған жоқ"
+  },
+  "header": {
+    "logIn": "Кіру",
+    "registration": "Тіркеу",
+    "logOut": "Шығу",
+    "about": "Платформа туралы",
+    "information": "Студенттерге арналған ақпарат",
+    "plan": "Оқу кестесі",
+    "news": "Жаңалықтар",
+    "contacts": "Байланыстар",
+    "search": "Іздеу"
+  },
+  "are_you_sure_alert": {
+    "question": "Сіз шынымен кеткіңіз келе ме?",
+    "logOut": "Шығу",
+    "no": "Жоқ"
+  },
+  "main": {
+    "about": "Платформа туралы",
+    "moreDetails": "Толығырақ",
+    "trustUs": "Олар бізге сенеді",
+    "usersWhoListenedCourses": "біздің курстарға қатысқан қолданушылар",
+    "usersWhoGotCertificate": "сертификат алған қолданушылар"
+  },
+  "news": {
+    "news": "Жаңалықтар",
+    "moreDetails": "Толығырақ"
+  },
+  "news_article": {
+    "source": "Дереккөз"
+  },
+  "page_not_found": {
+    "notFound": "Кешіріңіз, парақ табылмады",
+    "return": "Қайту"
+  },
+  "page_title": {
+    "authorization": "Жеке кабинетке кіріңіз",
+    "passwordRecovery": "Құпия сөзді қалпына келтіру",
+    "registration": "Тіркеу",
+    "search": "Іздеу",
+    "contacts": "Байланыстар",
+    "about": "Платформа туралы",
+    "news": "Жаңалықтар",
+    "profile": "Жеке бөлме",
+    "training": "Оқыту",
+    "myCourses": "Менің курстарым",
+    "testing": "Тестілеу",
+    "results": "Нәтижелер",
+    "course": "Курс"
+  },
+  "password_recovery": {
+    "passwordRecovery": "Құпия сөзді қалпына келтіру",
+    "hint": "Тіркеу кезінде көрсеткен электрондық пошта мекенжайын енгізіңіз",
+    "login": "Кіру",
+    "enterLogin": "Құпия сөз енгізіңіз",
+    "restorePassword": "Құпия сөзді қалпына келтіріңіз",
+    "cancel": "Бас тарту",
+    "response": "Жаңа құпия сөзі бар электрондық пошта көрсетілген электрондық пошта мекенжайына жіберілді"
+  },
+  "certificates": {
+    "certificates": "Сертификаттар",
+    "download": "Жүктеу"
+  },
+  "must_be_answered": {
+    "message": "Тестілеуді аяқтау үшін барлық сұрақтарға жауап беру керек",
+    "continue": "Жалғастыру"
+  },
+  "test_passed": {
+    "message": "Сынақ сәтті өтті!",
+    "done": "Дайын",
+    "viewResults": "Нәтижелерді қарау"
+  },
+  "time_is_up": {
+    "message": "Уақыт бітті",
+    "subMessage": "Сіз сынақтан өткен жоқсыз. Білім беру курсын аяқтау мүмкін емес. Кестедегі қол жетімді кестені таңдау арқылы білім беру курсына қайта жазылуға болады",
+    "selectCourseDate": "Курс күнін таңдаңыз",
+    "close": "Жабық"
+  },
+  "test": {
+    "testing": "Тестілеу",
+    "question": "Сұрақ",
+    "testingAttempt": "Тестілеу әрекеті",
+    "untilEnd": "тесттің соңына дейін",
+    "finish": "Аяқталды",
+    "next": "Әрі қарай",
+    "finishTest": "Аяқталған тест"
+  },
+  "test_results": {
+    "testing": "Тестілеу",
+    "question": "Сұрақ",
+    "close": "Жабық",
+    "congratulations": "Құттықтаймын!",
+    "youHavePassedTest": "Сіз сынақтан сәтті өттіңіз.",
+    "done": "Дайын",
+    "totalQuestions": "Барлық сұрақтар",
+    "correctAnswers": "Дұрыс жауаптар",
+    "requiredNumberOfCorrectAnswers": "Дұрыс жауаптардың қажетті саны",
+    "viewTestResults": "Тест нәтижелерін қарау",
+    "unfortunately": "Өкінішке орай,",
+    "youHaveFailedTest": "Сіз тестіңізден өте алмадыңыз.",
+    "tryAgain": "Қайтадан байқап көріңіз",
+    "backToCourse": "Курсқа оралу",
+    "timeIsUp": "Уақыт бітті",
+    "timeIsUpFull": "Соңғы сынақтан өту уақыты аяқталды.",
+    "courseNotPassed": "Курс өткен жоқ",
+    "youHaveNoMoreAttempts": "Сізде тестті қайтадан тапсыруға әрекет жоқ."
+  },
+  "course": {
+    "preliminaryTest": "Алдын ала тест",
+    "finalTest": "Қорытынды тест",
+    "module": "Модуль",
+    "numberOfChapters": "Бөлімдер саны",
+    "moduloTest": "Модуло тесті",
+    "completed": "Аяқталды",
+    "viewResult": "Нәтижені қарау",
+    "courseHasBeenPassed": "Білім беру курсы сәтті аяқталды!",
+    "goToCertificates": "Сертификаттарға өтіңіз",
+    "testResults": "Тест нәтижелері",
+    "syllabus": "Жоспар",
+    "usefulLinks": "Пайдалы сілтемелер",
+    "youHaveFailedPreliminaryTest": "Сіз аралық тестілеуден өткен жоқсыз. Білім беру курсын аяқтау мүмкін емес. Кестедегі қол жетімді кестені таңдау арқылы білім беру курсына қайта жазылуға болады",
+    "plan": "Кесте",
+    "aboutCourse": "Осы курс туралы"
+  },
+  "course_card": {
+    "duration": "ұзақтығы",
+    "courseHasBeenPassed": "Курс сәтті өтті",
+    "youHaveToPassPreliminaryTest": "Сізге аралық тестілеуден өту керек",
+    "takePreliminaryTest": "Аралық тестілеуден өту",
+    "youHaveBeenPassedPreliminaryTest": "Сіз аралық тестілеуден өттіңіз және сіз таңдаған білім беру курсы басталады",
+    "continue": "Оқытуды жалғастырыңыз",
+    "moreDetails": "Толығырақ"
+  },
+  "pre-test-required": {
+    "message": "Бұл курсты аяқтау үшін сіз аралық тестілеуден өтуіңіз керек",
+    "startTest": "Сынақты бастаңыз",
+    "passLater": "Кейінірек өтіңіз"
+  },
+  "feedback": {
+    "feedback": "Кері байланыс",
+    "supportService": "Қолдау қызметі",
+    "you": "Сіз",
+    "writeMessage": "Хабарлама жазу",
+    "typeMessage": "Хабарламаңызды енгізіңіз",
+    "send": "Хат жіберу"
+  },
+  "home": {
+    "home": "Басты",
+    "newNotifications": "жаңа хабарламалар",
+    "expand": "Кеңейту"
+  },
+  "how_to_start": {
+    "howToStart": "Неден бастау керек?",
+    "preliminaryTest": "Аралық тестілеу",
+    "registration": "Тіркеу",
+    "passingCourse": "Аралық тестілеу",
+    "finalTesting": "Қорытынды тестілеу",
+    "obtainingCertificate": "Сертификат алу"
+  },
+  "information": "Студенттерге арналған ақпарат",
+  "library": "Кітапхана",
+  "book_card": {
+    "download": "Жүктеу"
+  },
+  "menu": {
+    "home": "Басты",
+    "profileInfo": "Өтініш формасы",
+    "information": "Студенттерге арналған ақпарат",
+    "library": "Кітапхана",
+    "plan": "Оқу кестесі",
+    "courses": "Менің курстарым",
+    "certificates": "Сертификаттар",
+    "reference": "Анықтама",
+    "feedback": "Кері байланыс"
+  },
+  "plan": {
+    "plan": "Оқу кестесі",
+    "nearestCourse": "Жақын курс",
+    "moreDetails": "Толығырақ"
+  },
+  "profile_info": {
+    "age": "жылдар",
+    "status": "Күй",
+    "edit": "Өңдеу",
+    "coursesCompleted": "Курстар аяқталды",
+    "coursesInProgress": "Орындалған курстар",
+    "certificates": "Сертификаттар",
+    "userDataEditingRequired": "Пайдаланушының деректерін өңдеу қажет",
+    "goTo": "Бару",
+    "pendingModeration": "Модерация күтілуде",
+    "approved": "Бекітілген",
+    "rejected": "Қабылданбады"
+  },
+  "saved": {
+    "message": "Өзгерістер сақталды",
+    "ok": "Жарайды ма"
+  },
+  "editing": {
+    "editing": "Өңдеу",
+    "enterPhoneNumber": "Ұялы телефон нөмірін енгізіңіз",
+    "phoneNumber": "Ұялы телефон нөмірі",
+    "save": "Сақтау"
+  },
+  "reference": "Анықтама",
+  "registration": {
+    "welcome": "Қош келдіңіз!",
+    "hint": "Білім беру мазмұнын көру үшін тіркеліңіз",
+    "save": "Сақтау",
+    "register": "Қазір тіркеліңіз",
+    "next": "Әрі қарай",
+    "logIn": "Кіру",
+    "haveAnAccount": "Есептік жазбаңыз бар ма?"
+  },
+  "fill_in_required_fields": {
+    "message": "Қажетті өрістерді толтырыңыз",
+    "ok": "Жарайды ма"
+  },
+  "email_is_required": {
+    "message": "Сіз енгізген электрондық пошта тіркеліп қойған",
+    "ok": "Жарайды ма"
+  },
+  "choose_course": {
+    "message": "Сіз курс таңдаған жоқсыз",
+    "ok": "Жарайды ма"
+  },
+  "step_one": {
+    "surname": "Тегі",
+    "enterSurname": "Тегі енгізіңіз",
+    "name": "Аты-жөні",
+    "enterName": "Аты-жөні енгізіңіз",
+    "patronymic": "Әкесінің аты",
+    "enterPatronymic": "Әкесінің аты енгізіңіз",
+    "gender": "Еден",
+    "occupation": "Пайдаланушы түрі",
+    "phoneNumber": "Ұялы телефон нөмірі",
+    "region": "Тұрғылықты жері",
+    "uploadId": "Жеке куәлігіңізді жүктеп салыңыз",
+    "uploadHint": "Студенттік куәліктің көшірмесінің қоса берілген парағында екі жақта бір жерде жеке куәліктің ақ-қара бейнесі болуы керек, түсінікті болуы керек, бөгде суреттер болмауы керек",
+    "interfaceLanguage": "Интерфейс тілі"
+  },
+  "step_two": {
+    "workplace": "Жұмыс орны",
+    "enterWorkplace": "Ұйымның атын енгізіңіз",
+    "position": "Лауазымы",
+    "enterPosition": "Лауазымы енгізіңіз",
+    "specialty": "Мамандық",
+    "uploadEmploymentCertificate": "Сертификаттың көшірмесін жұмыс орнынан жүктеп алыңыз",
+    "uploadHint": "Студенттің жұмыс орнынан алынған куәліктің көшірмесінің қоса берілген ісі қара-ақ түсті, айқын, бөтен бейнелерден тұруы керек"
+  },
+  "step_three": {
+    "university": "Университет атауы",
+    "enterUniversity": "Университеттің атауын енгізіңіз",
+    "educationType": "Оқыту түрі",
+    "specialty": "Дипломдық мамандық",
+    "enterSpecialty": "Мамандыққа түсіңіз",
+    "uploadDiploma": "Диплом көшірмесін жүктеп алыңыз",
+    "uploadHint": "Студенттік дипломның көшірмесінің қоса берілген ісі қара-ақ түсті, айқын, бөтен бейнелерді қамтымауы керек"
+  },
+  "step_four": {
+    "enterEmail": "Электрондық пошта енгізіңіз",
+    "password": "Құпия сөз",
+    "enterPassword": "Құпия сөз енгізіңіз",
+    "passwordRequirements": "Құпия сөз қойылатын талаптар",
+    "atLeast6characters": "кемінде 6 таңба",
+    "mustContainNumbersAndLatinCharacters": "сандар мен латын таңбалары болуы керек",
+    "passwordConfirmation": "Құпия сөзді растаңыз",
+    "enterPasswordConfirmation": "Қайтадан құпия сөз"
+  },
+  "search": {
+    "newsSection": "Бөлім “Жаңалықтар”",
+    "coursesSection": "Бөлім “Курстар”",
+    "librarySection": "Бөлім “Кітапхана”"
+  },
+  "training": {
+    "aboutCourse": "Осы курс туралы",
+    "selectMonth": "Айды таңдаңыз",
+    "selectDate": "Курс күндерін таңдаңыз",
+    "takeCourse": "Курстан өту",
+    "noCourses": "Курстар жоқ"
+  },
+  "footer": {
+    "privacyPolicy": "Құпиялылық саясаты"
+  }
+}

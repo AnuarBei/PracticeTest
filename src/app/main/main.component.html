@@ -1,0 +1,83 @@
+<div
+  [ngClass]="{ 'main': !appService.isOnImpairedMode, 'main_impaired': appService.isOnImpairedMode }"
+>
+  <div class="slide d-flex justify-content-center align-items-end mrg-btm size--50">
+    <div class="custom-icon main-slide-icon" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+  </div>
+  <div class="about mrg-btm size--50">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12" *ngIf="aboutInfo">
+          <div class="title mrg-btm size--50">{{ 'main.about' | translate }}</div>
+          <div class="d-flex justify-content-between">
+            <div class="mrg-rgt size--30">
+              <div
+                class="about__image"
+                [ngStyle]="{ 'background-image': 'url(https://srh.org.kz' + aboutInfo.image + ')' }"
+              ></div>
+            </div>
+            <div class="d-flex flex-column justify-content-between">
+              <div class="mrg-btm size--38">
+                <div class="about__subtitle mrg-btm size--50">{{ aboutInfo.title }}</div>
+                <div class="about__text">{{ aboutInfo.body.slice(0, 250) }}...</div>
+              </div>
+              <div class="d-flex justify-content-end" routerLink="/about">
+                <app-button width="213px" height="44px">{{ 'main.moreDetails' | translate }}</app-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="news mrg-btm size--50">
+    <app-news [isInMain]="true"></app-news>
+  </div>
+
+  <div class="statistics" *ngIf="ourStudents">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="title mrg-btm size--50">{{ 'main.trustUs' | translate }}</div>
+          <div class="d-flex align-items-center mrg-btm size--100">
+            <div class="digit mrg-rgt size--22" *ngFor="let digit of ourStudents.students.toString().split('')">
+              <div class="digit__content">{{ digit }}</div>
+              <div class="digit__top"></div>
+              <div class="digit__bottom"></div>
+            </div>
+<!--            <div class="digit mrg-rgt size&#45;&#45;22">-->
+<!--              <div class="digit__content">5</div>-->
+<!--              <div class="digit__top"></div>-->
+<!--              <div class="digit__bottom"></div>-->
+<!--            </div>-->
+<!--            <div class="digit mrg-rgt size&#45;&#45;30">-->
+<!--              <div class="digit__content">5</div>-->
+<!--              <div class="digit__top"></div>-->
+<!--              <div class="digit__bottom"></div>-->
+<!--            </div>-->
+            <div class="statistics__text">- {{ 'main.usersWhoListenedCourses' | translate }}</div>
+          </div>
+          <div class="d-flex justify-content-end align-items-center">
+            <div class="statistics__text mrg-rgt size--30">{{ 'main.usersWhoGotCertificate' | translate }} -</div>
+            <div class="digit mrg-rgt size--22" *ngFor="let digit of ourStudents.certificated.toString().split('')">
+              <div class="digit__content">{{ digit }}</div>
+              <div class="digit__top"></div>
+              <div class="digit__bottom"></div>
+            </div>
+<!--            <div class="digit mrg-rgt size&#45;&#45;22">-->
+<!--              <div class="digit__content">5</div>-->
+<!--              <div class="digit__top"></div>-->
+<!--              <div class="digit__bottom"></div>-->
+<!--            </div>-->
+<!--            <div class="digit">-->
+<!--              <div class="digit__content">5</div>-->
+<!--              <div class="digit__top"></div>-->
+<!--              <div class="digit__bottom"></div>-->
+<!--            </div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

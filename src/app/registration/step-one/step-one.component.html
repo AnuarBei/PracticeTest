@@ -1,0 +1,50 @@
+<div class="row mrg-btm size--50">
+    <div class="col-lg-6">
+        <div class="mrg-btm size--30">
+            <app-select (newValue)="user.occupation = +$event" [value]="user.occupation"
+                label="{{ 'step_one.occupation' | translate }}" [options]="occupations" [required]="true"></app-select>
+        </div>
+        <div class="mrg-btm size--30">
+            <app-input (newValue)="user.surname = $event" [value]="user.surname"
+                placeholder="{{ 'step_one.enterSurname' | translate }}" label="{{ 'step_one.surname' | translate }}"
+                [required]="true"></app-input>
+        </div>
+        <div class="mrg-btm size--30">
+            <app-input (newValue)="user.name = $event" [value]="user.name"
+                placeholder="{{ 'step_one.enterName' | translate }}" label="{{ 'step_one.name' | translate }}"
+                [required]="true"></app-input>
+        </div>
+        <div class="mrg-btm size--30">
+            <app-input (newValue)="user.patronymic = $event" [value]="user.patronymic"
+                placeholder="{{ 'step_one.enterPatronymic' | translate }}"
+                label="{{ 'step_one.patronymic' | translate }}"></app-input>
+        </div>
+        <!--    <div class="mrg-btm size&#45;&#45;30">-->
+        <!--      <app-datepicker></app-datepicker>-->
+        <!--    </div>-->
+        <div class="mrg-btm size--30">
+            <app-select (newValue)="user.gender = $event" [value]="user.gender"
+                label="{{ 'step_one.gender' | translate }}" [options]="genders" [required]="true"></app-select>
+        </div>
+        <div class="mrg-btm size--30">
+            <app-input (newValue)="user.phone = $event" [value]="user.phone"
+                label="{{ 'step_one.phoneNumber' | translate }}" [required]="true"></app-input>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="mrg-btm size--30">
+            <app-select (newValue)="user.region = $event" [value]="user.region"
+                label="{{ 'step_one.region' | translate }}" [options]="cities" [required]="true"></app-select>
+        </div>
+        <div class="mrg-btm size--50">
+            <app-image-uploader [required]="true" (newValue)="user.doc1 = $event" [value]="user.doc1"
+                label="{{ 'step_one.uploadId' | translate }}" hint="{{ 'step_one.uploadHint' | translate }}">
+            </app-image-uploader>
+        </div>
+        <div class="mrg-btm size--30">
+            <app-select (newValue)="user.lang = $event" [value]="user.lang"
+                label="{{ 'step_one.interfaceLanguage' | translate }}" [options]="languages" [required]="true">
+            </app-select>
+        </div>
+    </div>
+</div>

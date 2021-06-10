@@ -1,0 +1,85 @@
+.certificate-card {
+  width: 250px;
+  min-height: 313px;
+  background: #FFFFFF;
+  border-radius: 15px;
+  overflow: hidden;
+  .certificate-card__image {
+    width: 250px;
+    height: 163px;
+    overflow: hidden;
+    background-color: #c3c3c3;
+  }
+  .certificate-card__info {
+    min-height: 89px;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 20px 10px 24px 10px;
+    .certificate-card__title {
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 20px;
+      color: #333333;
+    }
+    .certificate-card__date {
+      font-size: 13px;
+      line-height: 15px;
+      color: #4F4F4F;
+    }
+  }
+  .certificate-card__download {
+    cursor: pointer;
+    height: 61px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: #00409E;
+  }
+
+  .certificate-card__download:hover {
+    text-decoration: none;
+  }
+}
+
+
+.certificate-card_impaired {
+  width: 250px;
+  min-height: 313px;
+  background: #FFFFFF;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #000000;
+  .certificate-card__image {
+    width: 250px;
+    height: 163px;
+    overflow: hidden;
+    background-color: #797979;
+  }
+  .certificate-card__info {
+    min-height: 89px;
+    border-bottom: 1px solid #000000;
+    padding: 20px 10px 24px 10px;
+    .certificate-card__title {
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 20px;
+      color: #000000;
+    }
+    .certificate-card__date {
+      font-size: 13px;
+      line-height: 15px;
+      color: #000000;
+    }
+  }
+  .certificate-card__download {
+    cursor: pointer;
+    height: 61px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: #000000;
+  }
+
+  .certificate-card__download:hover {
+    text-decoration: none;
+  }
+}

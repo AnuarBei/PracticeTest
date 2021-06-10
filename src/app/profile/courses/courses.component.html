@@ -1,0 +1,8 @@
+<div class="courses">
+  <div class="d-flex justify-content-between flex-wrap">
+    <app-course-card *ngFor="let myCourse of myCourses" [myCourse]="myCourse"></app-course-card>
+  </div>
+  <app-dialog *ngIf="showDialog" [alert]="'pre-test-required'" (closeDialog)="getResult($event)">
+    <app-time-is-up-alert></app-time-is-up-alert>
+  </app-dialog>
+</div>

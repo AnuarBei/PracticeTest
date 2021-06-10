@@ -1,0 +1,13 @@
+<div
+  [ngClass]="{ 'menu': !appService.isOnImpairedMode, 'menu_impaired': appService.isOnImpairedMode }"
+  [ngStyle]="{ 'min-height': menu.length === 2 ? '100px' : '450px' }"
+>
+  <div
+    *ngFor="let menuItem of menu"
+    class="menu__link"
+    routerLinkActive="menu__link_active"
+    [routerLink]="menuItem.path"
+    [routerLinkActiveOptions]="{exact: true}">
+    {{ 'menu.' + menuItem.name | translate }}
+  </div>
+</div>

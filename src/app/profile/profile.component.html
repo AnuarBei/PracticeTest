@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 d-flex justify-content-between">
+      <div class="mrg-rgt size--44" *ngIf="!isCoursePage">
+        <app-menu></app-menu>
+      </div>
+      <div class="flex-fill">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <div class="col-lg-12" *ngIf="isInformationOrReferencePage">
+      <app-how-to-start></app-how-to-start>
+    </div>
+  </div>
+</div>
+

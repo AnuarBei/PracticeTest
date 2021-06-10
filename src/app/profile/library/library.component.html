@@ -1,0 +1,19 @@
+<div
+  [ngClass]="{ 'library': !appService.isOnImpairedMode, 'library_impaired': appService.isOnImpairedMode }"
+>
+  <div class="title mrg-btm size--34">{{ 'library' | translate }}</div>
+  <div class="mrg-btm size--40">
+<!--    <div class="subtitle mrg-btm size&#45;&#45;12">Группа 1</div>-->
+    <div class="d-flex justify-content-between flex-wrap">
+      <app-book-card *ngFor="let book of library" [book]="book"></app-book-card>
+    </div>
+  </div>
+
+<!--  <div class="mrg-btm size&#45;&#45;40">-->
+<!--    <div class="subtitle mrg-btm size&#45;&#45;12">Группа 2</div>-->
+<!--    <div class="d-flex justify-content-between flex-wrap">-->
+<!--      <app-book-card *ngFor="let i of [0,0,0,0,0]"></app-book-card>-->
+<!--      <i aria-hidden="true"></i>-->
+<!--    </div>-->
+<!--  </div>-->
+</div>

@@ -1,0 +1,87 @@
+.training {
+  font-size: 20px;
+  line-height: 150%;
+  color: #333333;
+  .training__info {
+    max-width: 689px;
+  }
+  .training__title {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    color: #333333;
+    &.training__title_bold {
+      font-weight: bold;
+    }
+  }
+
+  .training__subtitle {
+    font-weight: 500;
+  }
+
+  .training__description {
+    color: #717784;
+  }
+
+  .training__expand {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: #00409E;
+    cursor: pointer;
+  }
+
+  .training__datepicker {
+    padding: 34px 28px;
+    border: 1px solid #828282;
+    border-radius: 10px;
+    width: 474px;
+    height: 396px;
+  }
+}
+
+.training_impaired {
+  font-size: 20px;
+  line-height: 150%;
+  color: #000000;
+  .training__info {
+    max-width: 689px;
+  }
+  .training__title {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    color: #000000;
+    &.training__title_bold {
+      font-weight: bold;
+    }
+  }
+
+  .training__subtitle {
+    font-weight: 500;
+  }
+
+  .training__description {
+    color: #000000;
+  }
+
+  .training__expand {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  .training__datepicker {
+    padding: 34px 28px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    width: 474px;
+    height: 396px;
+  }
+}

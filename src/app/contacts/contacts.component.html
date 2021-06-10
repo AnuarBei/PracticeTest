@@ -1,0 +1,38 @@
+<div
+  class="container"
+  [ngClass]="{ 'contacts': !appService.isOnImpairedMode, 'contacts_impaired': appService.isOnImpairedMode }"
+  *ngIf="contacts"
+>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="mrg-btm size--40" *ngIf="contacts?.phones?.length">
+        <div class="title mrg-btm size--30">{{ 'contacts.phone' | translate }}</div>
+        <div class="mrg-btm size--10" *ngFor="let phone of contacts.phones">{{ phone.phone }}</div>
+      </div>
+
+      <div class="mrg-btm size--40" *ngIf="contacts?.address?.length">
+        <div class="title mrg-btm size--30">{{ 'contacts.address' | translate }}</div>
+        <div class="mrg-btm size--10" *ngFor="let address of contacts.address">{{ address.address }}</div>
+      </div>
+
+      <div class="mrg-btm size--40" *ngIf="contacts?.emails?.length">
+        <div class="title mrg-btm size--30">E-mail:</div>
+        <div class="mrg-btm size--10" *ngFor="let email of contacts.emails">{{ email.email }}</div>
+      </div>
+
+      <div class="mrg-btm size--40">
+        <div class="title mrg-btm size--30">{{ 'contacts.schedule' | translate }}</div>
+        <div class="mrg-btm size--10">
+          {{ days[contacts.day_start] }}
+          -
+          {{ days[contacts.day_end] }}
+          ,
+          {{ contacts.hour_start }}
+          -
+          {{ contacts.hour_end }}
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 contacts__phone"></div>
+  </div>
+</div>

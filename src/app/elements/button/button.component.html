@@ -1,0 +1,15 @@
+<div
+  [ngStyle]="{
+    width: width ? width : '290px',
+    height: height ? height : '56px'
+  }"
+  [ngClass]="{
+    'button_small-red': buttonType === 'small-red',
+    'button_small-blue': buttonType === 'small-blue',
+    'button_small-white': buttonType === 'small-white',
+    'button_small-gray': buttonType === 'small-gray',
+    'button': !appService.isOnImpairedMode,
+    'button_impaired': appService.isOnImpairedMode
+  }">
+  <ng-content></ng-content>
+</div>

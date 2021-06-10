@@ -1,0 +1,8 @@
+.hint {
+  font-size: 12px;
+  line-height: 24px;
+  color: #717784;
+  &.hint_invalid {
+    color: red;
+  }
+}

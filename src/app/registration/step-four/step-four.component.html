@@ -1,0 +1,20 @@
+<div class="row mrg-btm size--50">
+  <div class="col-lg-6">
+    <div class="mrg-btm size--30">
+      <app-input (newValue)="user.email = $event" [value]="user.email" placeholder="{{ 'step_four.enterEmail' | translate }}" label="E-mail" [required]="true"></app-input>
+    </div>
+    <div class="mrg-btm size--30">
+      <app-input (newValue)="user.password = $event" [value]="user.password" type="password" placeholder="{{ 'step_four.enterPassword' | translate }}" label="{{ 'step_four.password' | translate }}" [required]="true"></app-input>
+      <div class="hint hint_invalid" *ngIf="passwordInvalid">Пароль не соответствует требованиям</div>
+    </div>
+    <div class="mrg-btm size--30">
+        <!-- /!user.password || user.password.length < 6 || !passwordRegex.test(user.password) -->
+      <div class="hint">{{ 'step_four.passwordRequirements' | translate }}:</div>
+      <div class="hint">- {{ 'step_four.atLeast6characters' | translate }},</div>
+      <div class="hint">- {{ 'step_four.mustContainNumbersAndLatinCharacters' | translate }}.</div>
+    </div>
+    <div class="mrg-btm size--30">
+      <app-input (newValue)="user.password_confirmation = $event" [value]="user.password_confirmation" type="password" placeholder="{{ 'step_four.enterPasswordConfirmation' | translate }}" label="{{ 'step_four.passwordConfirmation' | translate }}" [required]="true"></app-input>
+    </div>
+  </div>
+</div>

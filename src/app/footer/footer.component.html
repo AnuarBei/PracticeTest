@@ -1,0 +1,53 @@
+<div
+  [ngClass]="{ 'footer': !appService.isOnImpairedMode, 'footer_impaired': appService.isOnImpairedMode }"
+>
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="container footer__background">
+        <div class="row">
+          <div class="footer__logo col-lg-4">
+            <!--        <div class="custom-icon logo-icon__white"></div>-->
+            <div routerLink="/">{{ 'name' | translate }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="copyright d-flex flex-column justify-content-end col-lg-4">
+            <div class="mrg-btm size--10">{{ 'copyright' | translate }}</div>
+            <a class="privacy-policy" href="https://buildmedia.readthedocs.org/media/pdf/djangoapibook/latest/djangoapibook.pdf" target="_blank">{{ 'footer.privacyPolicy' | translate }}</a>
+          </div>
+          <div class="contacts col-lg-4">
+            <div class="contacts__phone d-flex align-items-center mrg-btm size--30">
+              <div class="custom-icon phone-icon__blue mrg-rgt size--12" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+              <div class="text" *ngIf="contacts?.phones?.length">
+                <div *ngFor="let phone of contacts.phones">{{ phone.phone }}</div>
+              </div>
+            </div>
+            <div class="contacts__email d-flex align-items-center">
+              <div class="custom-icon mail-icon mrg-rgt size--12" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+              <div class="text" *ngIf="contacts?.emails?.length">
+                <div *ngFor="let email of contacts.emails">{{ email.email }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="social-networks d-flex justify-content-between col-lg-4" *ngIf="socialMedia">
+            <div class="social-networks__item" *ngIf="socialMedia.display_facebook">
+              <a class="custom-icon facebook-icon" [href]="socialMedia.facebook" target="_blank" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></a>
+            </div>
+            <div class="social-networks__item" *ngIf="socialMedia.display_google">
+              <a class="custom-icon google-icon" [href]="socialMedia.google" target="_blank" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></a>
+            </div>
+            <div class="social-networks__item" *ngIf="socialMedia.display_linkedin">
+              <a class="custom-icon linkedin-icon" [href]="socialMedia.linkedin" target="_blank" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></a>
+            </div>
+            <div class="social-networks__item" *ngIf="socialMedia.display_instagram">
+              <a class="custom-icon instagram-icon" [href]="socialMedia.instagram" target="_blank" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

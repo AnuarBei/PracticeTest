@@ -1,0 +1,124 @@
+.footer {
+  height: 319px;
+  font-size: 17px;
+  line-height: 20px;
+  background: #FFFFFF;
+
+  .footer__background {
+    height: 191px;
+    width: 100%;
+    background: url("../../assets/icons/footer-background.svg") no-repeat;
+  }
+
+  .footer__logo {
+    padding-top: 50px;
+    color: #ffffff;
+  }
+
+  .footer__logo:hover {
+    cursor: pointer;
+  }
+
+  .contacts {
+    .contacts__phone {
+      cursor: pointer;
+      .text {
+        color: rgba(0, 64, 158, 0.6);
+      }
+    }
+    .contacts__email {
+      cursor: pointer;
+      .text {
+        color: #717784;
+      }
+    }
+  }
+  .social-networks {
+    width: 278px;
+    .social-networks__item {
+      cursor: pointer;
+      border: 1px solid #D3DCE6;
+      box-sizing: border-box;
+      border-radius: 5px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .copyright {
+    font-size: 11px;
+    line-height: 150%;
+    color: #717784;
+  }
+
+  .privacy-policy:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+
+.footer_impaired {
+  border-top: 1px solid #000000;
+  height: 319px;
+  font-size: 17px;
+  line-height: 20px;
+  background: #FFFFFF;
+
+  .footer__background {
+    height: 191px;
+    width: 100%;
+  }
+
+  .footer__logo {
+    padding-top: 50px;
+    color: #000000;
+  }
+
+  .footer__logo:hover {
+    cursor: pointer;
+  }
+
+  .contacts {
+    .contacts__phone {
+      cursor: pointer;
+      .text {
+        color: #000000;
+      }
+    }
+    .contacts__email {
+      cursor: pointer;
+      .text {
+        color: #000000;
+      }
+    }
+  }
+  .social-networks {
+    width: 278px;
+    .social-networks__item {
+      cursor: pointer;
+      border: 1px solid #D3DCE6;
+      box-sizing: border-box;
+      border-radius: 5px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .copyright {
+    font-size: 11px;
+    line-height: 150%;
+    color: #000000;
+  }
+
+  .privacy-policy:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

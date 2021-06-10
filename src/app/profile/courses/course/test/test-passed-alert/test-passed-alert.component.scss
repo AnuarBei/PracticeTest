@@ -1,0 +1,35 @@
+.test-passed {
+  width: 500px;
+  height: 340px;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 30px;
+  color: #333333;
+  .link {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: #00409E;
+  }
+  .link:hover {
+    cursor: pointer;
+  }
+}
+
+.test-passed_impaired {
+  width: 500px;
+  height: 340px;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 30px;
+  color: #000000;
+  .link {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+  }
+  .link:hover {
+    cursor: pointer;
+  }
+}

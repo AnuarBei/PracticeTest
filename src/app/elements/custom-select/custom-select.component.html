@@ -1,0 +1,22 @@
+<div
+  [ngClass]="{ 'select': !appService.isOnImpairedMode, 'select_impaired': appService.isOnImpairedMode }"
+  *ngIf="isOpen"
+  (click)="toggleIsOpen()"
+>
+  <div (click)="setSelected(option.value)"
+       class="select__item"
+       *ngFor="let option of options;let i = index"
+       [ngClass]="{ 'select__item_active': option.active && isOpen }">
+    <div>{{ option.value }}</div>
+    <div class="custom-icon up-button-icon" *ngIf="i === 0" (click)="toggleIsOpen();$event.stopPropagation()" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+  </div>
+</div>
+<div
+  [ngClass]="{ 'select': !appService.isOnImpairedMode, 'select_impaired': appService.isOnImpairedMode }"
+  *ngIf="!isOpen" (click)="toggleIsOpen()"
+>
+  <div class="select__item">
+    <div>{{ selected ? selected : 'custom_select.month' | translate }}</div>
+    <div class="custom-icon up-button-icon custom-icon_reversed" [ngClass]="{ 'custom-icon_impaired': appService.isOnImpairedMode }"></div>
+  </div>
+</div>

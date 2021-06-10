@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div
+        *ngIf="newsItem"
+        [ngClass]="{ 'news-article': !appService.isOnImpairedMode, 'news-article_impaired': appService.isOnImpairedMode }"
+      >
+        <div class="news-article__title mrg-btm size--20">
+          {{ newsItem.title }}
+        </div>
+        <div class="news-article__subtitle mrg-btm size--30">
+          {{ newsItem.subtitle }}
+        </div>
+        <div class="news-article__body mrg-btm size--30">
+          <div
+            class="news-article__image mrg-btm size--20 mrg-rgt size--20"
+            [ngStyle]="{ 'background-image': 'url(' + newsItem.image + ')' }"
+          ></div>
+          <div [innerHTML]="newsItem.body"></div>
+        </div>
+        <div class="news-article__source-info">
+          {{ 'news_article.source' | translate }}: <span class="news-article__source">{{ newsItem.source }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
