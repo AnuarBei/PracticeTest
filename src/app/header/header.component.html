@@ -60,7 +60,7 @@
             <div
               class="menu__link mrg-btm size--12"
               [class]="{ 'menu__link_active': currentRoute === '/profile/information' || currentRoute === '/profile/plan' }"
-            >Обучение</div>
+            >{{ 'page_title.training' | translate}}</div>
             <div
               *ngIf="linkHover"
               class="link-dropdown"

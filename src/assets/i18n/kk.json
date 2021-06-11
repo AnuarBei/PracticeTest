@@ -20,7 +20,8 @@
   "contacts": {
     "phone": "Телефон:",
     "address": "Мекен-жай:",
-    "schedule": "Жұмыс кестесі:"
+    "schedule": "Жұмыс кестесі:",
+    "schedule_time": "Сейсенбі - Жұма , 09:00:00 - 18:00:00"
   },
   "custom_select": {
     "month": "Ай"
